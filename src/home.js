@@ -42,6 +42,46 @@ async function categories() {
     }
 }
 
+async function products() {
+
+    let cardsLimit = 4;
+    
+    function getBestSellingCard(title, price, image) {
+        return `
+            <div class="bg-white p-3 rounded-xl min-w-[145px] w-1/5 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-center">
+                        <img src="${image}" alt="Product Image" class="max-w-36">
+                    </div>
+                    <p class="product-title font-bold my-3">${title}</p>
+                </div>
+                <div>
+                    <div class="sizes mb-4 flex w-fit border-2 border-bullet rounded-full text-sm text-center p-[2px] gap-2 font-bold">
+                        <div class="w-9 cursor-pointer rounded-full bg-bullet text-white">SM</div>
+                        <div class="w-9 cursor-pointer rounded-full text-bullet">MD</div>
+                        <div class="w-9 cursor-pointer rounded-full text-bullet">LG</div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="text-secondary text-2xl font-bold">${price}</div>
+                        <span class="buy-icon cursor-pointer flex items-center justify-center bg-secondary text-white text-lg min-w-10 min-h-10 rounded-full"><i class="fa-solid fa-basket-shopping"></i></span>
+                    </div>
+                </div>
+            </div>`
+    }
+
+    let container = document.querySelector(".best-selling .products");    
+
+    let response = await axios.get("../products.json");
+    let products = response.data;
+
+    products.sort((a, b) => b.sales - a.sales);
+    products = products.slice(0, cardsLimit);
+    
+    for (let product of products) {
+        container.innerHTML += getBestSellingCard(product.title, product.price, product.image);
+    }
+}
 
 hero();
 categories();
+products();
