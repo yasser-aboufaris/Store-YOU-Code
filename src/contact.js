@@ -30,3 +30,15 @@ document.getElementById('fillForm').addEventListener('click', function () {
 
     xhr.send();
 });
+
+
+function parseResponse(response) {
+    let data = JSON.parse(response);
+    // console.log(typeof(data))
+    let results = data.results[0];
+    
+    document.getElementById("userInput").value = `${results.name.first}`;
+    document.getElementById("lastInput").value = `${results.name.last}`;
+    document.getElementById("subjectInput").value = `${results.login.username}`;
+    document.getElementById("textInput").value = `${results.login.username} - ${results.name.title} ${results.name.first} ${results.name.last} - Age: ${results.dob.age} - Registered for: ${results.registered.age} years`;
+}
