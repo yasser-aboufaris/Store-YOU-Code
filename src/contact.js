@@ -4,4 +4,9 @@ const errorMessage = document.getElementById('errorMessage');
 
 submit.addEventListener('click', async function(event) {
     event.preventDefault();
+
+    const nameInput = document.getElementById('userInput');
+    const lastNameInput = document.getElementById('lastInput');
+    const subjectInput = document.getElementById('subjectInput');
+    const textInput = document.getElementById('textInput');
 })
