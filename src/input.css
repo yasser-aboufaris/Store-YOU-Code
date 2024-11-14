@@ -17,6 +17,10 @@
     @apply mx-auto px-4 md:px-6 lg:px-20;
 }
 
+.section-title {
+    @apply text-center font-bold text-3xl mt-8 mb-16
+}
+
 html::-webkit-scrollbar {
    @apply w-1
 }
