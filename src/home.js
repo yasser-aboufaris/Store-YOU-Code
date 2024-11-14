@@ -48,9 +48,9 @@ async function productsSection() {
 
     let cardsLimit = 4;
     
-    function getBestSellingCard(title, price, image) {
+    function getBestSellingCard(id, title, price, image) {
         return `
-            <div class="product relative bg-white overflow-hidden p-3 rounded-xl min-w-[145px] w-1/5 flex flex-col justify-between">
+            <div id="${id}" class="product relative bg-white overflow-hidden p-3 rounded-xl min-w-[145px] w-1/5 flex flex-col justify-between">
                 <span>
                     <span class="absolute -left-[1.35rem] min-w-24 text-center -rotate-45 px-4 py-1 text-xs bg-secondary text-white">Best Selling</span>
                 </span>
@@ -68,7 +68,7 @@ async function productsSection() {
                         <span style="height: calc(100% - 2px); left: 2px" class="active-overlay z-10 absolute transition-all duration-300 bg-bullet w-9 rounded-full top-1/2 -translate-y-1/2"></span>
                     </div>
                     <div class="flex items-center justify-between">
-                        <div class="text-secondary text-2xl font-bold">${price}</div>
+                        <div class="price text-secondary text-2xl font-bold">${price}</div>
                         <span class="buy-icon cursor-pointer flex items-center justify-center bg-secondary text-white text-lg min-w-10 min-h-10 rounded-full"><i class="fa-solid fa-basket-shopping"></i></span>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ async function productsSection() {
     bestSellingProducts = bestSellingProducts.slice(0, cardsLimit);
     
     for (let product of bestSellingProducts) {
-        container.innerHTML += getBestSellingCard(product.title, product.price, product.image);
+        container.innerHTML += getBestSellingCard(product.id, product.title, product.price, product.image);
     }
 
 
@@ -103,6 +103,7 @@ async function productsSection() {
                 });
     
                 indexOfClickedBtn = i;
+                changeProductPriceBasedOnSize(product.id, indexOfClickedBtn);
     
                 let overlay = sizesDiv.querySelector(".active-overlay");
                 overlay.style.left = `calc(2.25rem * ${indexOfClickedBtn} + .5rem * ${indexOfClickedBtn} + 2px)`;
@@ -113,6 +114,15 @@ async function productsSection() {
     function toggleColors(btn) {
         btn.classList.toggle(`text-white`);
         btn.classList.toggle(`text-bullet`);
+    }
+
+    function changeProductPriceBasedOnSize(id, sizeIndex) {
+        let priceDiv = document.getElementById(id).querySelector(".price");
+
+        let currentPrice = Math.round(parseFloat(priceDiv.textContent));
+        let newPrice = (currentPrice * sizesRate[sizeIndex]).toFixed(2) ;
+
+        priceDiv.textContent = newPrice + "$";
     }
 }
 

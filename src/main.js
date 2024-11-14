@@ -1,4 +1,5 @@
 let products = [];
+const sizesRate = [1 , 1.10, 1.25];
 
 async function loadProducts() {
     let response = await axios.get("../products.json");
