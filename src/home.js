@@ -77,7 +77,7 @@ async function productsSection() {
 
     let container = document.querySelector(".best-selling .products");
 
-    let bestSellingProducts = products;
+    let bestSellingProducts = [...products];
 
     bestSellingProducts.sort((a, b) => b.sales - a.sales);
     bestSellingProducts = bestSellingProducts.slice(0, cardsLimit);
@@ -88,9 +88,10 @@ async function productsSection() {
 
 
     container.querySelectorAll(".product").forEach(function(product) {
+        
+        product.querySelector(".buy-icon").addEventListener("click", () => addProductToCard(product.id));
 
         let sizesButtons = product.querySelectorAll(".sizes div");
-
         sizesButtons.forEach((sizeButton, i) => {
             let sizesDiv = sizeButton.parentElement;
             let indexOfClickedBtn = 0;
