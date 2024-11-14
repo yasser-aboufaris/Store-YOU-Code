@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <header class="relative bg-white">
+        <div class="border-b-2 border-b-gray">
+          <div class="container flex justify-between items-center py-4">
+              <div class="flex items-center gap-3">
+                <span class="menu-icon relative flex flex-col gap-1 sm:hidden">
+                  <span class="top-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
+                  <span class="middle-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
+                  <span class="bottom-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
+                </span>
+                <h1 class="text-primary text-3xl font-bold">STORIO</h1>
+              </div>
+              <input autocomplete="off" type="text" placeholder="Search" name="search" class="hidden sm:block w-2/5 focus:w-1/2 transition-all duration-300 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
+              <div class="flex justify-between items-center gap-12 text-2xl">
+                  <i class="fa-solid fa-user cursor-pointer hover:text-primary transition-all duration-300"></i>
+                  <span class="relative">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="absolute -top-1 -right-2 w-4 h-4 text-sm rounded-full bg-secondary text-white flex justify-center items-center">2</span>
+                  </span>
+              </div>
+          </div>
+        </div>
+    
+        <div class="border-b-2 border-b-gray">
+          <nav class="hidden sm:flex container py-4 justify-between items-center">
+              <ul class="flex items-center gap-6">
+                  <li class="font-semibold border-b-2 border-b-primary text-primary"><a href="./">Home</a></li>
+                  <li class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./">Categories</a></li>
+                  <li class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./">Discounts</a></li>
+                  <li class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./">Contact Us</a></li>
+              </ul>
+    
+              <span class="text-secondary font-semibold">Save More With Storio Card</span>
+          </nav>
+    
+          <div class="container py-4 flex justify-center items-center sm:hidden">
+            <input autocomplete="off" type="text" placeholder="Search" name="search" class="w-10/12 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
+          </div>
+        </div>
+    
+        <ul class="menu-links sm:hidden -z-10 -top-full absolute w-full flex flex-col shadow-2xl rounded-b-2xl transition-all duration-500">
+            <li class="py-3 px-5 border-b border-b-primary text-primary"><a href="./">Home</a></li>
+            <li class="py-3 px-5 border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./">Categories</a></li>
+            <li class="py-3 px-5 border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./">Discounts</a></li>
+            <li class="py-3 px-5 hover:text-primary"><a href="./">Contact Us</a></li>
+        </ul>
+      </header>
+<!-- 
+        <div class="flex justify-around items-center border-y-2 border-gray-light h-24">
+          <div class="">
+              <h1 class="text-sm font-semibold md:text-2xl">Our Black Friday Promo Packs</h1>
+          </div>
+
+          <div class="flex justify-end w-[45%] font-semibold md:w-[25%]">
+              <button class="text-sm border border-gray-dark rounded-3xl w-28 h-10 md:w-32">View More</button>
+          </div>
+        </div>
+
+        <div class="bg-red-500 h-64 w-full flex items-center justify-around">
+            <div class="bg-blue-500 w-[45%] h-[90%] flex flex-col gap-2 p-2">
+               
+
+                <div class="border">
+                    <div class="border">
+                        50%
+                    </div>
+                    image
+                </div>
+
+                <div class="border">
+                    <p>Banana Juice - High Calsuim & Vitamine Z</p>
+                </div>
+
+                <div class="flex justify-center items-center border border-gray-dark rounded-3xl w-[65%] p-[1px]">
+                    <div class="w-full h-full flex items-center justify-around border rounded-3xl gap-0.5">
+                        <div class="bg-gray-dark text-white rounded-3xl w-10 h-[90%] flex justify-center items-center border">
+                            <span class="text-sm border h-full">SM</span>
+                        </div>
+    
+                        <div class="bg-gray-dark text-white rounded-3xl w-10 h-[95%] flex justify-center items-center">
+                            <span class="text-sm">MD</span>
+                        </div>
+    
+                        <div class="bg-gray-dark text-white rounded-3xl w-10 h-[90%] flex justify-center items-center">
+                            <span class="text-sm">LG</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex">
+                    <div>
+                        <span>$0.50</span>
+                    </div>
+
+                    <div>
+                        <span>$1.99</span>
+                    </div>
+
+                    <div>
+                        <button></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-500 w-[45%] h-[90%]">
+
+            </div>
+        </div>   -->
+        
+        
+      <!-- <section class="bg-red-400 border-2">
+        <div class="grid grid-cols-3 grid-rows-3">
+            <div class="col-start-1 col-end-2 row-start-1 row-end-4">
+                <a href="#">
+                    <img class="" src="../images/high-tech.png" alt="black friday promotion card">
+                </a>
+            </div>
+    
+            <div class="col-start-2 col-end-3 row-start-1 row-end-3">
+                <a href="#">
+                    <img class="" src="../images/electro.png" alt="black friday promotion card">
+                </a>
+            </div>
+    
+            <div class="col-start-3 col-end-4 row-start-2 row-end-4">
+                <a href="#">
+                    <img class="" src="../images/maison.png" alt="black friday promotion card">
+                </a>
+            </div>
+    
+            <div class="col-start-3 col-end-4 row-start-1 row-end-4">
+                <a href="#">
+                    <img class="" src="../images/high-tech.png" alt="black friday promotion card">
+                </a>
+            </div>
+        </div>
+    </section> -->
+    
+
+    <!-- <section class="bg-gray-300 p-4">
+        <div class="grid grid-cols-3 gap-4 h-full">
+            <div class="col-span-1 row-span-2 bg-[url('../images/beaute.png')] bg-cover bg-center h-64 w-full">
+                <a href="#">
+                    <img class="h-96 object-cover rounded-lg" src="" alt="Beauty black friday promotion">
+                </a>
+            </div>
+    
+            <div class="col-span-2 grid grid-cols-2 gap-4 bg-[url('../images/electro.png')]">
+                <div class="w-32">
+                    <a href="#">
+                        <img class="w-full h-full object-cover rounded-lg" src="" alt="Electro black friday promotion">
+                    </a>
+                </div>
+                <div class="w-10 h-10 border-2">
+                    <img width="1" class="w-10 max-h-3 object-cover rounded-lg" src="../images/maison.png" alt="Maison black friday promotion">
+                </div>
+            </div>
+    
+            <div class="col-span-1 row-span-1">
+                <a href="#">
+                    <img class="w-full h-full object-cover rounded-lg" src="../images/high-tech.png" alt="High tech black friday promotion">
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="best-selling bg-gray pt-1 pb-12">                
+        <div class="products container flex flex-wrap sm:flex-row justify-evenly gap-1">
+            <div id="${id}" class="product relative bg-white overflow-hidden p-3 rounded-xl min-w-[145px] w-1/5 flex flex-col justify-between">
+                <span>
+                    <span class="absolute -left-[1.35rem] min-w-24 text-center -rotate-45 px-4 py-1 text-xs bg-secondary text-white">Best Selling</span>
+                </span>
+                <div>
+                    <div class="flex justify-center">
+                        <img src="" alt="Product Image" class="max-w-36">
+                    </div>
+                    <p class="product-title font-bold my-3">${title}</p>
+                </div>
+                <div>
+                    <div class="relative sizes mb-4 flex w-fit border-2 border-bullet rounded-full text-sm text-center p-[2px] gap-2 font-bold">
+                        <div class="z-20 w-9 cursor-pointer rounded-full transition-all duration-300 text-white">SM</div>
+                        <div class="z-20 w-9 cursor-pointer rounded-full transition-all duration-300 text-bullet">MD</div>
+                        <div class="z-20 w-9 cursor-pointer rounded-full transition-all duration-300 text-bullet">LG</div>
+                        <span style="height: calc(100% - 2px); left: 2px" class="active-overlay z-10 absolute transition-all duration-300 bg-bullet w-9 rounded-full top-1/2 -translate-y-1/2"></span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="price text-secondary text-2xl font-bold">${price}</div>
+                        <span class="buy-icon cursor-pointer flex items-center justify-center bg-secondary text-white text-lg min-w-10 min-h-10 rounded-full"><i class="fa-solid fa-basket-shopping"></i></span>
+                    </div>
+                </div>
+            </div>
+
+      </section>
+    
+
+    <script src="promotion.js"></script>
+      <script src="main.js"></script>
+</body>
+</html>

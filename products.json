@@ -1,0 +1,434 @@
+[
+    {
+       "title":"Fresh Bananas - Naturally Sweet and Healthy",
+       "image":"https://cdn.auchan.fr/media/A0220230109000042748PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"1.99$",
+       "sales":500,
+       "discount":null,
+       "category":"Fruits",
+       "id":0
+    },
+    {
+       "title":"Pineapple - Sweet and Tangy Delight",
+       "image":"https://www.mymarket.ma/cdn/shop/products/Ananas.png?v=1666872855&width=300",
+       "price":"3.49$",
+       "sales":320,
+       "discount":"10%",
+       "category":"Fruits",
+       "id":1
+    },
+    {
+       "title":"Baby Carrots - Fresh and Crunchy",
+       "image":"https://cdn.auchan.fr/media/P02000000000TNBPRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"2.50$",
+       "sales":300,
+       "discount":null,
+       "category":"Vegetables",
+       "id":2
+    },
+    {
+       "title":"Spinach - Packed with Essential Nutrients",
+       "image":"https://www.mymarket.ma/cdn/shop/products/poussed_epinard.png?v=1597837628&width=300",
+       "price":"1.99$",
+       "sales":350,
+       "discount":"5%",
+       "category":"Vegetables",
+       "id":3
+    },
+    {
+       "title":"Salmon Fillets - Fresh and Delicious",
+       "image":"https://www.mymarket.ma/cdn/shop/products/2780.jpg?v=1590775603&width=300",
+       "price":"12.99$",
+       "sales":200,
+       "discount":null,
+       "category":"Meats & Seafood",
+       "id":4
+    },
+    {
+       "title":"Shrimp - Fresh, Juicy, and Tender",
+       "image":"https://cdn.auchan.fr/media/P02000000001DJOPRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"15.99$",
+       "sales":180,
+       "discount":"5%",
+       "category":"Meats & Seafood",
+       "id":5
+    },
+    {
+       "title":"Green Tea - Refreshing and Packed with Antioxidants",
+       "image":"https://www.mymarket.ma/cdn/shop/products/the-vert-en-grain_2_f9ec16bb-a802-4e23-b200-d739517ed605.png?v=1652697601&width=300",
+       "price":"3.99$",
+       "sales":350,
+       "discount":null,
+       "category":"Beverages",
+       "id":6
+    },
+    {
+       "title":"Cold Brew Coffee - Smooth and Strong",
+       "image":"https://www.mymarket.ma/cdn/shop/products/9b0f89355e0c84ad561f34d96ce8bb43_1.png?v=1665157454&width=300",
+       "price":"4.49$",
+       "sales":250,
+       "discount":null,
+       "category":"Beverages",
+       "id":7
+    },
+    {
+       "title":"Salted Pretzels - Crispy and Flavorful",
+       "image":"https://cdn.auchan.fr/media/A0220181031000829870PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"2.75$",
+       "sales":400,
+       "discount":"10%",
+       "category":"Biscuits & Snacks",
+       "id":8
+    },
+    {
+       "title":"Potato Chips - Crunchy and Savory",
+       "image":"https://www.mymarket.ma/cdn/shop/products/125g_indian_curry_r-z.png?v=1637916429&width=300",
+       "price":"3.99$",
+       "sales":500,
+       "discount":null,
+       "category":"Biscuits & Snacks",
+       "id":9
+    },
+    {
+       "title":"Whole Wheat Bread - Soft and Nutritious",
+       "image":"https://www.mymarket.ma/cdn/shop/products/JOR-8437000906636.png?v=1653645977&width=300",
+       "price":"2.99$",
+       "sales":400,
+       "discount":null,
+       "category":"Breads & Bakery",
+       "id":10
+    },
+    {
+       "title":"Multigrain Bread - High in Fiber and Flavor",
+       "image":"https://cdn.auchan.fr/media/A0220170206000460511PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"3.25$",
+       "sales":350,
+       "discount":null,
+       "category":"Breads & Bakery",
+       "id":11
+    },
+    {
+       "title":"Frozen Chicken Nuggets - Crispy and Delicious",
+       "image":"https://cdn.auchan.fr/media/A0220140903000797797PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"5.99$",
+       "sales":280,
+       "discount":null,
+       "category":"Frozen Foods",
+       "id":12
+    },
+    {
+       "title":"Frozen French Fries - Golden and Crispy",
+       "image":"https://cdn.auchan.fr/media/A0220200430000801377PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"4.99$",
+       "sales":310,
+       "discount":null,
+       "category":"Frozen Foods",
+       "id":13
+    },
+    {
+       "title":"Apple Juice - Fresh and Flavorful",
+       "image":"https://www.mymarket.ma/cdn/shop/products/compalfruitsrouges1l.jpg?v=1643128700&width=300",
+       "price":"3.25$",
+       "sales":420,
+       "discount":"5%",
+       "category":"Juices",
+       "id":14
+    },
+    {
+       "title":"Orange Juice - Freshly Squeezed for You",
+       "image":"https://www.mymarket.ma/cdn/shop/products/Nectar-Orange-Mangue-1L-VALENCIA.png?v=1647597031&width=300",
+       "price":"3.49$",
+       "sales":500,
+       "discount":null,
+       "category":"Juices",
+       "id":15
+    },
+    {
+       "title":"Mangoes - Sweet and Juicy Delights",
+       "image":"https://cdn.auchan.fr/media/A0220190322000083748PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"2.99$",
+       "sales":450,
+       "discount":null,
+       "category":"Fruits",
+       "id":16
+    },
+    {
+       "title":"Lettuce - Fresh and Crispy Greens",
+       "image":"https://www.mymarket.ma/cdn/shop/products/10194.jpg?v=1590785912&width=300",
+       "price":"1.50$",
+       "sales":220,
+       "discount":null,
+       "category":"Vegetables",
+       "id":17
+    },
+    {
+       "title":"Chicken Breasts - Lean and Protein-Packed",
+       "image":"https://www.mymarket.ma/cdn/shop/products/8957.png?v=1663666376&width=300",
+       "price":"8.99$",
+       "sales":250,
+       "discount":null,
+       "category":"Meats & Seafood",
+       "id":18
+    },
+    {
+       "title":"Lemonade - Sweet and Refreshing",
+       "image":"https://www.mymarket.ma/cdn/shop/products/calypso-pineapple-peach-lemonade-473-ml.png?v=1663319845&width=300",
+       "price":"2.99$",
+       "sales":370,
+       "discount":"5%",
+       "category":"Beverages",
+       "id":19
+    },
+    {
+       "title":"Avocados - Fresh, Ripe, and Creamy",
+       "image":"https://www.mymarket.ma/cdn/shop/products/9850.jpg?v=1590785237&width=300",
+       "price":"4.99$",
+       "sales":450,
+       "discount":null,
+       "category":"Fruits",
+       "id":20
+    },
+    {
+       "title":"Strawberries - Sweet and Juicy Berries",
+       "image":"https://www.mymarket.ma/cdn/shop/products/37655_1.png?v=1672749451&width=300",
+       "price":"5.49$",
+       "sales":370,
+       "discount":null,
+       "category":"Fruits",
+       "id":21
+    },
+    {
+       "title":"Cucumber - Fresh, Crisp, and Refreshing",
+       "image":"https://www.mymarket.ma/cdn/shop/products/04062-concombre-select-2.png?v=1640695484&width=300",
+       "price":"1.25$",
+       "sales":280,
+       "discount":null,
+       "category":"Vegetables",
+       "id":22
+    },
+    {
+       "title":"Broccoli - Nutrient-Rich and Healthy",
+       "image":"https://cdn.auchan.fr/media/A0219910107000041902PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"2.50$",
+       "sales":400,
+       "discount":null,
+       "category":"Vegetables",
+       "id":23
+    },
+    {
+       "title":"Tuna Steaks - Fresh and Flavorful",
+       "image":"https://cdn.auchan.fr/media/A0220141205000801440PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"14.99$",
+       "sales":150,
+       "discount":null,
+       "category":"Meats & Seafood",
+       "id":24
+    },
+    {
+       "title":"Cod Fillets - Fresh and Tender",
+       "image":"https://www.mymarket.ma/cdn/shop/products/1993352_2.jpg?v=1644664458&width=300",
+       "price":"10.49$",
+       "sales":200,
+       "discount":null,
+       "category":"Meats & Seafood",
+       "id":25
+    },
+    {
+       "title":"Coconut Water - Refreshing and Hydrating",
+       "image":"https://groceryhub.nl/cdn/shop/files/GH-GITSRiceIdli.jpg?v=1696157678&width=300",
+       "price":"3.99$",
+       "sales":450,
+       "discount":null,
+       "category":"Beverages",
+       "id":26
+    },
+    {
+       "title":"Iced Tea - Refreshing and Cool",
+       "image":"https://www.mymarket.ma/cdn/shop/products/prod_1635779717.png?v=1643190281&width=300",
+       "price":"3.49$",
+       "sales":350,
+       "discount":null,
+       "category":"Beverages",
+       "id":27
+    },
+    {
+       "title":"Chocolate Chip Cookies - Warm and Sweet",
+       "image":"https://cdn.auchan.fr/media/S010000000404IBPRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"4.50$",
+       "sales":500,
+       "discount":null,
+       "category":"Biscuits & Snacks",
+       "id":28
+    },
+    {
+       "title":"Oatmeal Cookies - Soft and Chewy",
+       "image":"https://cdn.auchan.fr/media/A0220150102000908540PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"3.75$",
+       "sales":380,
+       "discount":null,
+       "category":"Biscuits & Snacks",
+       "id":29
+    },
+    {
+       "title":"Croissants - Buttery, Soft, and Flaky",
+       "image":"https://cdn.auchan.fr/media/P0200000000158SPRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"2.99$",
+       "sales":450,
+       "discount":null,
+       "category":"Breads & Bakery",
+       "id":30
+    },
+    {
+       "title":"4K UHD Smart TV - 55 inch",
+       "image":"https://cdn.auchan.fr/media/A0220231211000478531PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"499.99$",
+       "sales":180,
+       "discount":"10%",
+       "category":"Electronics",
+       "id":31
+    },
+    {
+       "title":"Wireless Noise Cancelling Headphones",
+       "image":"https://cdn.auchan.fr/media/A0220240626000076044PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"129.99$",
+       "sales":500,
+       "discount":null,
+       "category":"Electronics",
+       "id":32
+    },
+    {
+       "title":"Portable Bluetooth Speaker",
+       "image":"https://cdn.auchan.fr/media/A0220210318000476253PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"49.99$",
+       "sales":400,
+       "discount":"15%",
+       "category":"Electronics",
+       "id":33
+    },
+    {
+       "title":"IPhone 14 PRO MAX - 128GB Storage",
+       "image":"https://cdn.auchan.fr/media/A0220240806000526205PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"799.99$",
+       "sales":250,
+       "discount":null,
+       "category":"Electronics",
+       "id":34
+    },
+    {
+       "title":"Wireless Mouse - Ergonomic Design",
+       "image":"https://cdn.auchan.fr/media/MEDIASTEP26273153_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"19.99$",
+       "sales":400,
+       "discount":"5%",
+       "category":"Electronics",
+       "id":35
+    },
+    {
+       "title":"Laptop - 16GB RAM, i9 K9800, 512GB SSD",
+       "image":"https://cdn.auchan.fr/media/42170543-2029-465b-8007-c59667869aff_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"899.99$",
+       "sales":150,
+       "discount":null,
+       "category":"Electronics",
+       "id":36
+    },
+    {
+       "title":"Wireless Charging Pad - Support MageSafe",
+       "image":"https://cdn.auchan.fr/media/A0220240701000459245PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"29.99$",
+       "sales":500,
+       "discount":"20%",
+       "category":"Electronics",
+       "id":37
+    },
+    {
+       "title":"Bluetooth Smartwatch - Fitness and Notifications",
+       "image":"https://cdn.auchan.fr/media/A0220240918000056239PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"89.99$",
+       "sales":300,
+       "discount":null,
+       "category":"Electronics",
+       "id":38
+    },
+    {
+       "title":"External Hard Drive - 1PB",
+       "image":"https://cdn.auchan.fr/media/MEDIASTEP61715791_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"59.99$",
+       "sales":180,
+       "discount":null,
+       "category":"Electronics",
+       "id":39
+    },
+    {
+       "title":"Gaming Keyboard - RGB Lighting, Up to 300wpm based on the user",
+       "image":"https://cdn.auchan.fr/media/A0220170405000668626PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"49.99$",
+       "sales":250,
+       "discount":"10%",
+       "category":"Electronics",
+       "id":40
+    },
+    {
+       "title":"Smart Thermostat - Energy Saving, Mobile app controll",
+       "image":"https://cdn.auchan.fr/media/f38b5238-1ecd-4d19-a1df-7e1c508e741c_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"129.99$",
+       "sales":200,
+       "discount":"15%",
+       "category":"Electronics",
+       "id":41
+    },
+    {
+       "title":"Drone with 4K Camera",
+       "image":"https://cdn.auchan.fr/media/005ee9f9-658c-4dc6-90e1-6be8f05190a5_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"349.99$",
+       "sales":100,
+       "discount":null,
+       "category":"Electronics",
+       "id":42
+    },
+    {
+       "title":"Digital Camera - 24MP Support Raw Pictures",
+       "image":"https://cdn.auchan.fr/media/c9b709d2-32bf-4fdc-ad2d-c65ea8813f74_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"499.99$",
+       "sales":180,
+       "discount":"10%",
+       "category":"Electronics",
+       "id":43
+    },
+    {
+       "title":"Smart Light Bulbs - Powered by the YouCanSee Technology",
+       "image":"https://cdn.auchan.fr/media/A0220200924000688683PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"39.99$",
+       "sales":320,
+       "discount":null,
+       "category":"Electronics",
+       "id":44
+    },
+    {
+       "title":"Voice Assistant - Google Smart Speaker",
+       "image":"https://cdn.auchan.fr/media/A0220191018000370959PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"99.99$",
+       "sales":400,
+       "discount":null,
+       "category":"Electronics",
+       "id":45
+    },
+    {
+       "title":"Electric Kettle - Rapid Boil",
+       "image":"https://cdn.auchan.fr/media/f4e3e204-4a95-4ce3-b3bd-66b323ec645e_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"39.99$",
+       "sales":220,
+       "discount":null,
+       "category":"Electronics",
+       "id":46
+    },
+    {
+       "title":"Projector - Wireless, 60hz, 1080p HD",
+       "image":"https://cdn.auchan.fr/media/A0220231019000485930PRIMARY_2048x2048/B2CD/?quality=75&width=300&format=rw&height=300",
+       "price":"299.99$",
+       "sales":150,
+       "discount":null,
+       "category":"Electronics",
+       "id":47
+    }
+ ]
