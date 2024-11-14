@@ -50,7 +50,7 @@ async function productsSection() {
     
     function getBestSellingCard(id, title, price, image) {
         return `
-            <div id="${id}" class="product relative bg-white overflow-hidden p-3 rounded-xl min-w-[145px] w-1/5 flex flex-col justify-between">
+            <div data-id="${id}" data-size-index="0" class="product relative bg-white overflow-hidden p-3 rounded-xl min-w-[145px] w-1/5 flex flex-col justify-between">
                 <span>
                     <span class="absolute -left-[1.35rem] min-w-24 text-center -rotate-45 px-4 py-1 text-xs bg-secondary text-white">Best Selling</span>
                 </span>
@@ -89,14 +89,18 @@ async function productsSection() {
 
     container.querySelectorAll(".product").forEach(function(product) {
         
-        product.querySelector(".buy-icon").addEventListener("click", () => addProductToCard(product.id));
+        let indexOfClickedBtn = 0;
+
+        product.querySelector(".buy-icon").addEventListener("click", () => addProductToCard(product.getAttribute("data-id"), indexOfClickedBtn));
 
         let sizesButtons = product.querySelectorAll(".sizes div");
+
         sizesButtons.forEach((sizeButton, i) => {
             let sizesDiv = sizeButton.parentElement;
-            let indexOfClickedBtn = 0;
     
             sizeButton.onclick = function (){
+                if(indexOfClickedBtn == i) return;
+
                 sizesButtons.forEach((btn) => {
                     if (btn.classList.contains("text-white") || btn == sizeButton) {
                         toggleColors(btn);
@@ -104,7 +108,8 @@ async function productsSection() {
                 });
     
                 indexOfClickedBtn = i;
-                changeProductPriceBasedOnSize(product.id, indexOfClickedBtn);
+                product.setAttribute("data-size-index", indexOfClickedBtn);
+                changeProductPriceBasedOnSize(product);
     
                 let overlay = sizesDiv.querySelector(".active-overlay");
                 overlay.style.left = `calc(2.25rem * ${indexOfClickedBtn} + .5rem * ${indexOfClickedBtn} + 2px)`;
@@ -115,15 +120,6 @@ async function productsSection() {
     function toggleColors(btn) {
         btn.classList.toggle(`text-white`);
         btn.classList.toggle(`text-bullet`);
-    }
-
-    function changeProductPriceBasedOnSize(id, sizeIndex) {
-        let priceDiv = document.getElementById(id).querySelector(".price");
-
-        let currentPrice = Math.round(parseFloat(priceDiv.textContent));
-        let newPrice = (currentPrice * sizesRate[sizeIndex]).toFixed(2) ;
-
-        priceDiv.textContent = newPrice + "$";
     }
 }
 

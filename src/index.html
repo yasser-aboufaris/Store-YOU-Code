@@ -25,8 +25,8 @@
           <input autocomplete="off" type="text" placeholder="Search" name="search" class="hidden sm:block w-2/5 focus:w-1/2 transition-all duration-300 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
           <div class="flex justify-between items-center gap-12 text-2xl">
               <i class="fa-solid fa-user cursor-pointer hover:text-primary transition-all duration-300"></i>
-              <span class="cart-icon relative">
-                <i class="cursor-pointer fa-solid fa-cart-shopping"></i>
+              <span class="cart-icon cursor-pointer relative">
+                <i class="fa-solid fa-cart-shopping"></i>
                 <span class="count absolute -top-1 -right-2 w-4 h-4 text-sm rounded-full bg-secondary text-white flex justify-center items-center">0</span>
               </span>
           </div>
@@ -316,8 +316,8 @@
 
         <div class="px-5 border-t-2 border-t-gray py-4">
           <div class="flex justify-between text-3xl">
-            <h3 class="font-semibold">Selected: 219$</h3>
-            <h3 class="font-semibold">Total: 347$</h3>
+            <h3 class="font-semibold">Selected: <span class="total-selected-price">0</span>$</h3>
+            <h3 class="font-semibold">Total: <span class="total-price">0</span>$</h3>
           </div>
           <p class="text-gray-dark text-sm mt-2">Taxes, discounts and shipping calculated after ordering.</p>
           <button class="block text-white py-2 px-4 rounded-lg mt-8 mx-auto bg-gradient-to-r from-secondary-light from-70% to-secondary">Order Now</button>
