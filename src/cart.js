@@ -2,6 +2,7 @@ const cartIcon = document.querySelector("header .cart-icon");
 const cartContainer = document.getElementById("cart-container");
 const cart = cartContainer.querySelector(".cart");
 const productsContainer = cartContainer.querySelector(".products");
+const noProductsAlert = cartContainer.querySelector(".no-products")
 
 function cartEvents() {
     cartContainer.onclick = function (event) {
@@ -152,7 +153,7 @@ function productEvents(product) {
 function changeProductPriceBasedOnSize(product) {
     let priceDiv = product.querySelector(".price");
 
-    let price = parseFloat(products[product.getAttribute("data-id")].price);
+    let price = products[product.getAttribute("data-id")].price;
 
     let quantity = product.querySelector(".quantity");
     if (quantity) {
@@ -175,7 +176,7 @@ function refreshTotals() {
     let totalProductsPrice = 0;
     let totalProductsQuantity = 0;
     for (let product of cartProducts) {
-        totalProductsPrice += parseFloat(product.price) * product.quantity * sizesRate[product.sizeIndex];
+        totalProductsPrice += product.price * product.quantity * sizesRate[product.sizeIndex];
         totalProductsQuantity += product.quantity;
     }
 
@@ -195,6 +196,12 @@ function reloadCart() {
         productEvents(cartProduct);
     })
     refreshTotals();
+
+    if (cartProducts.length == 0) {
+        noProductsAlert.classList.remove("hidden")
+    }else {
+        noProductsAlert.classList.add("hidden")
+    }
 }
 
 cartEvents();
