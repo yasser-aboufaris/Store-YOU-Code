@@ -33,6 +33,7 @@ cartIcon.onclick = function () {
         cart.classList.add("right-0");
     }, 0);
 }
+//home-hero transition
 const bgHeColor = ['bg-violet-300','bg-orange-700','bg-blue-300'];
 const titleHeColor = ['text-violet-800','text-yellow-100','text-blue-800'];
 const buttonHEColor =['bg-green-600','bg-yellow-400','bg-blue-800'];
@@ -53,4 +54,5 @@ function changeBg() {
   }
 
   setInterval(changeBg, 4000);
+
 
