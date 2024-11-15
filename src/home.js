@@ -68,7 +68,7 @@ async function productsSection() {
                         <span style="height: calc(100% - 2px); left: 2px" class="active-overlay z-10 absolute transition-all duration-300 bg-bullet w-9 rounded-full top-1/2 -translate-y-1/2"></span>
                     </div>
                     <div class="flex items-center justify-between">
-                        <div class="price text-secondary text-2xl font-bold">${price}</div>
+                        <div class="price text-secondary text-2xl font-bold">${price}$</div>
                         <span class="buy-icon cursor-pointer flex items-center justify-center bg-secondary text-white text-lg min-w-10 min-h-10 rounded-full"><i class="fa-solid fa-basket-shopping"></i></span>
                     </div>
                 </div>

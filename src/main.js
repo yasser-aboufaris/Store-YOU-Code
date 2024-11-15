@@ -5,6 +5,9 @@ const sizesRate = [1 , 1.10, 1.25];
 async function loadProducts() {
     let response = await axios.get("../products.json");
     products = response.data;
+    products.forEach(product => {
+        product.price = product.price.toFixed(2);
+    });
 }
 
 function navbar() {
