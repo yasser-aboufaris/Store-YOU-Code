@@ -153,7 +153,7 @@ function productEvents(product) {
 function changeProductPriceBasedOnSize(product) {
     let priceDiv = product.querySelector(".price");
 
-    let price = parseFloat(products[product.getAttribute("data-id")].price);
+    let price = products[product.getAttribute("data-id")].price;
 
     let quantity = product.querySelector(".quantity");
     if (quantity) {
@@ -176,7 +176,7 @@ function refreshTotals() {
     let totalProductsPrice = 0;
     let totalProductsQuantity = 0;
     for (let product of cartProducts) {
-        totalProductsPrice += parseFloat(product.price) * product.quantity * sizesRate[product.sizeIndex];
+        totalProductsPrice += product.price * product.quantity * sizesRate[product.sizeIndex];
         totalProductsQuantity += product.quantity;
     }
 
