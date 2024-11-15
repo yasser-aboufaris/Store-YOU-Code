@@ -2,6 +2,7 @@ const cartIcon = document.querySelector("header .cart-icon");
 const cartContainer = document.getElementById("cart-container");
 const cart = cartContainer.querySelector(".cart");
 const productsContainer = cartContainer.querySelector(".products");
+const noProductsAlert = cartContainer.querySelector(".no-products")
 
 function cartEvents() {
     cartContainer.onclick = function (event) {
@@ -195,6 +196,12 @@ function reloadCart() {
         productEvents(cartProduct);
     })
     refreshTotals();
+
+    if (cartProducts.length == 0) {
+        noProductsAlert.classList.remove("hidden")
+    }else {
+        noProductsAlert.classList.add("hidden")
+    }
 }
 
 cartEvents();
