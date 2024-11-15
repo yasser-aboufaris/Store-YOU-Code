@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
-  <link href="output.css" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./home.css">
 </head>
-<body>
+<body >
 
   <!-- The Header -->
   <header class="relative bg-white">
-    <div class="border-b-2 border-b-red-400">
+    <div class="border-b-2 border-b-gray">
       <div class="container flex justify-between items-center py-4">
           <div class="flex items-center gap-3">
             <span class="menu-icon relative flex flex-col gap-1 sm:hidden">
@@ -19,14 +20,14 @@
               <span class="middle-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
               <span class="bottom-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
             </span>
-            <h1 class="text-primary text-3xl font-bold">STORIO</h1>
+            <h1 class="text-primary text-3xl font-bold" id="top">STORIO</h1>
           </div>
           <input autocomplete="off" type="text" placeholder="Search" name="search" class="hidden sm:block w-2/5 focus:w-1/2 transition-all duration-300 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
           <div class="flex justify-between items-center gap-12 text-2xl">
               <i class="fa-solid fa-user cursor-pointer hover:text-primary transition-all duration-300"></i>
-              <span class="cart-icon relative">
-                <i class="cursor-pointer fa-solid fa-cart-shopping"></i>
-                <span class="absolute -top-1 -right-2 w-4 h-4 text-sm rounded-full bg-secondary text-white flex justify-center items-center">2</span>
+              <span class="cart-icon cursor-pointer relative">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="count absolute -top-1 -right-2 w-4 h-4 text-sm rounded-full bg-secondary text-white flex justify-center items-center">0</span>
               </span>
           </div>
       </div>
@@ -49,7 +50,7 @@
       </div>
     </div>
 
-    <ul class="menu-links sm:hidden -z-10 -top-full absolute w-full flex flex-col shadow-2xl rounded-b-2xl transition-all duration-500">
+    <ul class="menu-links bg-white sm:hidden -z-10 -top-full absolute w-full flex flex-col shadow-2xl rounded-b-2xl transition-all duration-500">
         <li class="border-b border-b-primary text-primary"><a href="./" class="block w-full py-3 px-5">Home</a></li>
         <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./" class="block w-full py-3 px-5">Categories</a></li>
         <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./" class="block w-full py-3 px-5">Discounts</a></li>
@@ -57,9 +58,9 @@
     </ul>
   </header>
   <!-- The Header End -->
- 
 
-    <div class="w-full bg-blue-300 h-72  flex transition-all duration-1000 " id="hero">
+  <!-- Hero  -->
+    <div class="w-full relative -z-20 bg-blue-300 h-72  flex transition-all duration-1000" id="hero">
   
       <div class="flex flex-col justify-around w-1/2 h-3/4 self-center container " >
   
@@ -87,196 +88,107 @@
     </div>
   
     </div>
-  <!-- Cart -->
-  <div id="cart-container" class="hidden z-50 fixed top-0 left-0 w-full min-h-screen bg-black bg-opacity-60">
-    <div class="cart fixed -right-full top-0 w-11/12 sm:w-3/5 lg:w-1/2 max-h-[95%] rounded-s-lg bg-white overflow-y-scroll no-scrollbar transition-all duration-500">
-        <h1 class="font-bold text-3xl text-center py-5 border-b-2 border-b-gray">Your Cart</h1>
+  <!-- Hero End -->
 
-        <div class="products flex flex-col gap-4 py-6 px-5">
+  <!-- Categories -->
+  <section class="categories overflow-hidden m-5">
+      <div class="category-wrapper relative h-24">
 
-          <div class="flex justify-between items-center gap-6">
+      </div>
+  </section>
+  <!-- Categories End -->
 
-            <div class="flex items-center gap-4">
-              <input type="checkbox" name="selected" class="appearance-none p-3 border-2 border-secondary rounded-lg">
+  <!-- Best Selling Products -->
+  <section class="best-selling bg-gray pt-1 pb-12">
+    <h1 class="section-title">Best Selling Products</h1>
+        
+    <div class="products container flex flex-wrap sm:flex-row justify-evenly gap-y-10 gap-x-4 md:gap-x-1">
 
-              <div class="flex">
-                <div class="flex flex-col items-center gap-2">
-
-                  <img src="../assets/images/home/categories/category1.png" class="max-w-24 max-h-20" alt="">
-                  <div class="flex gap-x-2">
-                    <span class="bg-dark border-[1.5px] border-dark text-white cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">SM</span>
-                    <span class="bg-white border-[1.5px] border-dark text-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">MD</span>
-                    <span class="bg-white border-[1.5px] border-dark text-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">LG</span>
-                  </div>
-
-                </div>
-                <div class="flex flex-col justify-end gap-4">
-                  <p class="text-sm font-semibold">Banana Juice - High Calsuim & Vitamine Z</p>
-                  <div class="controll-quantity text-2xl flex justify-end items-center gap-2">
-                    <i class="cursor-pointer text-secondary-light fa-solid fa-minus"></i>
-                    <span class="select-none px-3 text-lg border border-secondary-light rounded-lg">2</span>
-                    <i class="cursor-pointer text-secondary-light fa-solid fa-plus"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <h2 class="min-w-[4.5rem] text-right text-3xl">56$</h2>
-
-          </div>
-
-          <div class="flex justify-between items-center gap-6">
-
-            <div class="flex items-center gap-4">
-              <div class="relative">
-                <input type="checkbox" name="selected" class="appearance-none p-3 border-2 border-secondary rounded-lg bg-secondary">
-                <i class="absolute text-lg text-white top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 fa-solid fa-check"></i>
-              </div>
-              <div class="flex">
-                <div class="flex flex-col items-center gap-2">
-
-                  <img src="../assets/images/home/categories/category2.png" class="max-w-24 max-h-20" alt="">
-                  <div class="flex gap-x-2">
-                    <span class="bg-white border-[1.5px] border-dark text-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">SM</span>
-                    <span class="bg-white border-[1.5px] border-dark text-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">MD</span>
-                    <span class="bg-dark border-[1.5px] border-dark text-white cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">LG</span>
-                  </div>
-
-                </div>
-                <div class="flex flex-col justify-end gap-4">
-                  <p class="text-sm font-semibold">Banana Juice - High Calsuim & Vitamine Z</p>
-                  <div class="controll-quantity text-2xl flex justify-end items-center gap-2">
-                    <i class="cursor-pointer text-secondary-light fa-solid fa-minus"></i>
-                    <span class="select-none px-3 text-lg border border-secondary-light rounded-lg">4</span>
-                    <i class="cursor-pointer text-secondary-light fa-solid fa-plus"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <h2 class="min-w-[4.5rem] text-right text-3xl">24.5$</h2>
-
-          </div>
-
-          <div class="flex justify-between items-center gap-6">
-
-            <div class="flex items-center gap-4">
-              <div class="relative">
-                <input type="checkbox" name="selected" class="appearance-none p-3 border-2 border-secondary rounded-lg bg-secondary">
-                <i class="absolute text-lg text-white top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 fa-solid fa-check"></i>
-              </div>
-              <div class="flex">
-                <div class="flex flex-col items-center gap-2">
-
-                  <img src="../assets/images/home/categories/category3.png" class="max-w-24 max-h-20" alt="">
-                  <div class="flex gap-x-2">
-                    <span class="bg-white border-[1.5px] border-dark text-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">SM</span>
-                    <span class="bg-white border-[1.5px] border-dark text-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">MD</span>
-                    <span class="bg-dark border-[1.5px] border-dark text-white cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">LG</span>
-                  </div>
-
-                </div>
-                <div class="flex flex-col justify-end gap-4">
-                  <p class="text-sm font-semibold">Banana Juice - High Calsuim & Vitamine Z</p>
-                  <div class="controll-quantity text-2xl flex justify-end items-center gap-2">
-                    <i class="cursor-pointer text-secondary-light fa-solid fa-trash-can"></i>
-                    <span class="select-none px-3 text-lg border border-secondary-light rounded-lg">1</span>
-                    <i class="cursor-pointer text-secondary-light fa-solid fa-plus"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <h2 class="min-w-[4.5rem] text-right text-3xl">121$</h2>
-
-          </div>
-
-          <div class="flex justify-between items-center gap-6">
-
-            <div class="flex items-center gap-4">
-              <input type="checkbox" name="selected" class="appearance-none p-3 border-2 border-secondary rounded-lg">
-
-              <div class="flex">
-                <div class="flex flex-col items-center gap-2">
-
-                  <img src="../assets/images/home/categories/category4.png" class="max-w-24 max-h-20" alt="">
-                  <div class="flex gap-x-2">
-                    <span class="bg-white border-[1.5px] border-dark text-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">SM</span>
-                    <span class="bg-dark border-[1.5px] border-dark text-white cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">MD</span>
-                    <span class="bg-white border-[1.5px] border-dark text-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">LG</span>
-                  </div>
-
-                </div>
-                <div class="flex flex-col justify-end gap-4">
-                  <p class="text-sm font-semibold">Banana Juice - High Calsuim & Vitamine Z</p>
-                  <div class="controll-quantity text-2xl flex justify-end items-center gap-2">
-                    <i class="cursor-pointer text-secondary-light fa-solid fa-minus"></i>
-                    <span class="select-none px-3 text-lg border border-secondary-light rounded-lg">2</span>
-                    <i class="cursor-pointer text-secondary-light fa-solid fa-plus"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <h2 class="min-w-[4.5rem] text-right text-3xl">13$</h2>
-
-          </div>
-
-        </div>
-
-        <div class="px-5 border-t-2 border-t-gray py-4">
-          <div class="flex justify-between text-3xl">
-            <h3 class="font-semibold">Selected: 219$</h3>
-            <h3 class="font-semibold">Total: 347$</h3>
-          </div>
-          <p class="text-gray-dark text-sm mt-2">Taxes, discounts and shipping calculated after ordering.</p>
-          <button class="block text-white py-2 px-4 rounded-lg mt-8 mx-auto bg-gradient-to-r from-secondary-light from-70% to-secondary">Order Now</button>
-        </div>
     </div>
-  </div>
-  <!-- End Cart -->
+  </section>
+  <!-- Best Selling Products End-->
 
- <!-- star Our Advantages -->
+  <!-- Discounts Section -->
+  <section>
+      <h1 class="section-title">Weekly Discounts</h1>
+
+      <div class="flex flex-col gap-4 justify-center px-10 md:flex-row md:justify-center lg:gap-8 lg:justify-between lg:px-10 ">
+          <div class="bg-[#A7DFFA] h-[270px] lg:w-1/2 rounded-2xl flex justify-around overflow-hidden">
+              <div class=" w-full md:w-1/2 lg:w-1/2 pl-4 pt-4">
+                  <h4 class="text-xl font-bold text-[#EA580C] mb-3">Only this week</h4>
+                  <h3 class="text-2xl font-bold mb-4" >Don't miss our discounts </h3>
+                  <p class="text-[#6B7280] mb-6"> Be the first one, who get the discount.</p>
+                  <div class="flex justify-around bg-white font-bold  w-32 h-12 items-center rounded-xl">
+                      <button  >Shop Now </button>
+                      <img src="../assets/images/home/discounts/Vector.png" alt="" class="h-7 ">
+                  </div>
+              </div>
+              <div class="h-full flex items-end">
+                  <img src="../assets/images/home/discounts/discount1.png" class="" alt="">
+              </div>
+          </div>
+
+          <div class="bg-[#F4F1EC] h-[270px] lg:w-1/2 rounded-2xl flex justify-around overflow-hidden">
+              <div class=" w-full md:w-1/2 lg:w-1/2 pl-4 p-4 ">
+                  <h4 class="text-xl font-bold text-[#EA580C] mb-3">Only this week</h4>
+                  <h3 class="text-2xl font-bold mb-4" >Don't miss our discounts </h3>
+                  <p class="text-[#6B7280] mb-6"> Be the first one, who get the discount.</p>
+                  <div class="flex justify-around bg-white font-bold  w-32 h-12 items-center  rounded-xl">
+                      <button  >Shop Now </button>
+                      <img src="../assets/images/home/discounts/Vector.png"alt="" class="h-7 ">
+
+                  </div>
+              </div>
+              <div >
+                  <img src="../assets/images/home/discounts/discount2.png" class="mt-20 " alt="">
+              </div>    
+          </div>
+
+      </div>
+  </section> 
+  <!-- Discounts Section End -->
+
+    <!-- Our Advantages -->
     <section>
-      <h1 class="text-5xl font-bold mb-16 mt-8 text-center lg:text-3xl">Our Advantages</h1>
-      <div class="flex flex-col items-center  gap-6  lg:flex-row lg:justify-evenly">
-        <div class="flex	items-start	 gap-6 ">
+      <h1 class="section-title">Our Advantages</h1>
+      <div class="container flex flex-col items-center justify-center  gap-10  lg:flex-row lg:justify-evenly md:flex md:flex-row md:flex-wrap md:justify-center">
+        <div class="flex	items-start	justify-center  ">
           <div class="flex items-center ">
-           <img src="../assets/images/home/categories/SVGPayment.svg" alt="">
+           <img src="../assets/images/home/advantages/SVGPayment.svg"  alt="" width="70%">
           </div>
-          <div class="w-80 lg:w-40">
-            <h3 class="text-xl font-bold mb-2 lg:text-sm">Payment only online</h3>
-            <p class="text-lg text-gray-dark lg:text-[.65rem] lg:leading-3">Tasigförsamhet beteendedesign. Mobile.</p>
+          <div class="md:w-80 lg:w-40">
+            <h3 class="text-base font-bold mb-2 lg:text-sm">Payment only online</h3>
+            <p class="text-sm text-gray-dark lg:text-[.65rem] lg:leading-3">Tasigförsamhet beteendedesign. Mobile.</p>
           </div>
   
         </div>
-        <div class="flex	items-start	 gap-6 ">
+        <div class="flex	items-start	justify-center  " >
           <div class="flex items-center ">
-           <img src="../assets/images/home/categories/SVGNew.svg" alt="">
+           <img src="../assets/images/home/advantages/SVGNew.svg" alt="" width="70%">
           </div>
-          <div class="w-80 lg:w-40">
-            <h3 class="text-xl font-bold mb-2  lg:text-sm">New stocks and sales</h3>
-            <p class="text-lg text-gray-dark lg:text-[.65rem] lg:leading-3">Tasigförsamhet beteendedesign. Mobile.</p>
+          <div class="md:w-80 lg:w-40">
+            <h3 class="text-base font-bold mb-2  lg:text-sm">New stocks and sales</h3>
+            <p class="text-sm text-gray-dark lg:text-[.65rem] lg:leading-3">Tasigförsamhet beteendedesign. Mobile.</p>
           </div>
   
         </div>
-        <div class="flex	items-start	 gap-6 ">
+        <div class="flex	items-start	justify-center ">
           <div class="flex items-center ">
-           <img src="../assets/images/home/categories/SVGQuality.svg" alt="">
+           <img src="../assets/images/home/advantages/SVGQuality.svg" alt="" width="70%">
           </div>
-          <div class="w-80 lg:w-40 ">
-            <h3 class="text-xl font-bold mb-2 lg:text-sm ">Quality assurance</h3>
-            <p class="text-lg text-gray-dark lg:text-[.65rem] lg:leading-3">Tasigförsamhet beteendedesign. Mobile.</p>
+          <div class="md:w-80 lg:w-40 ">
+            <h3 class="text-base font-bold mb-2 lg:text-sm ">Quality assurance</h3>
+            <p class="text-sm text-gray-dark lg:text-[.65rem] lg:leading-3">Tasigförsamhet beteendedesign. Mobile.</p>
           </div>
   
         </div>
-        <div class="flex	items-start	 gap-6 ">
+        <div class="flex	items-start	justify-center  ">
           <div class="flex items-center ">
-           <img src="../assets/images/home/categories/SVGDelivery.svg" alt="">
+           <img src="../assets/images/home/advantages/SVGDelivery.svg" alt="" width="70%">
           </div>
-          <div class="w-80 lg:w-40">
-            <h3 class="text-xl font-bold mb-2 lg:text-sm">Delivery from 1 hour</h3>
-            <p class="text-lg  text-gray-dark lg:text-[.65rem] lg:leading-3">Tasigförsamhet beteendedesign. Mobile.</p>
+          <div class="md:w-80 lg:w-40">
+            <h3 class="text-base font-bold mb-2 lg:text-sm">Delivery from 1 hour</h3>
+            <p class="text-sm  text-gray-dark lg:text-[.65rem] lg:leading-3">Tasigförsamhet beteendedesign. Mobile.</p>
           </div>
   
         </div>
@@ -292,16 +204,195 @@
           <span class="text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white from-25% to-secondary-light opacity-50">%50</span>
         </div>
         <div class="z-10">
-          <img src="../assets/images/home/categories/promo.png.png" alt="">
-        </div> 
+          <img src="../assets/images/home/discounts/discountsTheme.png" alt="">
+        </div>
       </div>
      </section>
-    <!-- end Our Advantages-->
-     <div class="w-full h-80 bg-violet-700">
-      
-     </div>
+    <!-- Our Advantages End-->
   
-  <script src="main.js"></script>
+    <!-- star Our Customers Reviews -->
+    <section class="pb-12">
+    <h1 class="section-title">Our Customers Reviews</h1>
 
+    <div class="flex  items-center justify-center gap-6   flex-row flex-wrap ">
+      <div class="gap-2 w-80 rounded-2xl shadow-md   ">
+        <div class="flex	items-center	  gap-2 w-80   p-2 ">
+                        <div class="flex items-center w-18 rounded-lg h-18  overflow-hidden">
+          <img class=" object-contain	" src="../assets/images/home/categories/userchat.png" alt="" >
+        </div>
+        <div class="lg:w-40 ">
+          <h3 class="text-xl font-bold  lg:text-sm"> Machic</h3>
+          
+            <p class="text-sm w-2 text-gray-dark lg:text-[.65rem] lg:leading-3">
+              Featu
+              <span >red</span>
+            </p>
+            
+          
+
+          <div >
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+          </div>
+        </div>
+        </div>
+        <div class="border-t-2 h-20  border-gray-dark">
+            <p class="text-sm   lg:text-[.65rem] lg:leading-3 p-4 ">
+              Good quality product can only be found in good stores, its the best store shop i ever try.
+            </p>
+        </div>
+      </div>
+      <div class="gap-2 w-80 rounded-2xl shadow-md   ">
+        <div class="flex	items-center	  gap-2 w-80   p-2 ">
+                        <div class="flex items-center w-18 rounded-lg h-18  overflow-hidden">
+          <img class=" object-contain	" src="../assets/images/home/categories/userchat.png" alt="" >
+        </div>
+        <div class="lg:w-40">
+          <h3 class="text-xl font-bold  lg:text-sm"> Machic</h3>
+          
+            <p class="text-sm w-2 text-gray-dark lg:text-[.65rem] lg:leading-3">
+              Featu
+              <span >red</span>
+            </p>
+            
+          
+
+          <div >
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+          </div>
+        </div>
+        </div>
+        <div class="border-t-2 h-20 border-gray-dark ">
+            <p class="text-sm   lg:text-[.65rem] lg:leading-3 p-4 ">
+              Good quality product can only be found in good stores, its the best store shop i ever try.
+            </p>
+        </div>
+      </div>
+      <div class="gap-2 w-80 rounded-2xl shadow-md   ">
+        <div class="flex	items-center	  gap-2 w-80   p-2 ">
+                        <div class="flex items-center w-18 rounded-lg h-18  overflow-hidden">
+          <img class=" object-contain	" src="../assets/images/home/categories/userchat.png" alt="" >
+        </div>
+        <div class="lg:w-40">
+          <h3 class="text-xl font-bold  lg:text-sm"> Machic</h3>
+          
+            <p class="text-sm w-2 text-gray-dark lg:text-[.65rem] lg:leading-3">
+              Featu
+              <span >red</span>
+            </p>
+            
+          
+
+          <div >
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+            <i class="fa-solid fa-star text-[#FACC15]"></i>
+          </div>
+        </div>
+        </div>
+        <div class="border-t-2 h-20 border-gray-dark ">
+            <p class="text-sm  lg:text-[.65rem] lg:leading-3 p-4 ">
+              Good quality product can only be found in good stores, its the best store shop i ever try.
+            </p>
+        </div>
+      </div>
+    </div>
+
+    </section>
+    <!-- end Our Customers Reviews-->
+
+   <!-- star footer -->
+    <section>
+      <div class="bg-[#634C9F] p-5 ">
+        <div class=" flex justify-between pb-6 ">
+          <h1 class="text-start text-white font-bold lg:text-2xl">STORIO</h1>
+          <h1 class="text-end text-white font-semibold lg:text-xl">Back to top <a href="#top"> <i class="fa-solid fa-arrow-up border-2 border-white rounded-full p-2 w-8 lg:w-9"></i></a>  </h1>
+
+        </div>
+        <div class="flex justify-evenly mb-8 " >
+          <div class="text-white  ">
+            <h2 class=" font-semibold pb-3 text-sm lg:text-lg">Links</h2>
+            <div class=" flex flex-col gap-1 lg:gap-4">
+              <h3 class="text-xs font-light lg:text-sm">Home</h3>
+              <h3 class="text-xs font-light lg:text-sm">Categories</h3>
+              <h3 class="text-xs font-light lg:text-sm">Discounts</h3>  
+            </div>
+           
+          </div>
+          <div class="text-white">
+            <h2 class=" font-semibold pb-3 text-sm lg:text-lg">Our Branchs</h2>
+            <div class=" flex flex-col gap-1 lg:gap-4">
+              <h3 class="text-xs font-light lg:text-sm" >Paris</h3>
+              <h3 class="text-xs font-light lg:text-sm">Lille</h3>
+              <h3 class="text-xs font-light lg:text-sm">Monaco</h3>
+            </div>
+            
+          </div>
+          <div class="text-white">
+            <h2 class=" font-semibold pb-3 text-sm lg:text-lg">Let Us Help You</h2>
+            <div class=" flex flex-col gap-1 lg:gap-4">
+              <h3 class="text-xs font-light lg:text-sm">Contact Us</h3>
+              <h3 class="text-xs font-light lg:text-sm">Help Center</h3>
+              <h3 class="text-xs font-light lg:text-sm">Privacy Policy</h3>
+              <h3 class="text-xs font-light lg:text-sm">Terms and Conditions</h3>
+            </div>
+            
+          </div>
+        </div>
+        <div class=" flex justify-between ">
+          <h1 class="text-start text-white text-[4px] lg:text-xs lg:mb-5 ">Copyright 2024 © Storio Holding. All right reserved. </h1>
+          <h1 class="text-end text-white text-[4px] lg:text-xs ">Privacy Policy</h1>
+          
+
+        </div>
+        <div class=" bg-white flex flex-row justify-evenly gap-2 p-1 w-32 rounded-xl lg:w-64 ">
+          <img src="../assets/images/home/footer/visa.svg" alt="" class="w-4 lg:w-8">
+          <img src="../assets/images/home/footer/mastercard.svg" alt="" class="w-4 lg:w-8">
+          <img src="../assets/images/home/footer/paypal.svg" alt="" class="w-4 lg:w-8">
+          <img src="../assets/images/home/footer/skrill.svg" alt="" class="w-4 lg:w-8">
+          
+        </div>
+      </div>
+    </section>
+  <!-- End footer -->
+
+  <!-- Cart -->
+  <div id="cart-container" class="hidden z-50 fixed top-0 left-0 w-full min-h-screen bg-black bg-opacity-60">
+    <div class="cart fixed -right-full top-0 w-11/12 sm:w-3/5 lg:w-1/2 max-h-[95%] rounded-s-lg bg-white overflow-y-scroll no-scrollbar transition-all duration-500">
+        <h1 class="font-bold text-3xl text-center py-5 border-b-2 border-b-gray">Your Cart</h1>
+
+        <div class="products flex flex-col gap-4 py-6 px-5">
+
+        </div>
+        <div class="no-products text-center text-2xl text-secondary font-bold mt-1 mb-12">
+          There's no products in the cart.
+        </div>
+
+        <div class="px-5 border-t-2 border-t-gray py-4">
+          <div class="flex justify-between text-3xl">
+            <h3 class="font-semibold">Selected: <span class="total-selected-price">0</span>$</h3>
+            <h3 class="font-semibold">Total: <span class="total-price">0</span>$</h3>
+          </div>
+          <p class="text-gray-dark text-sm mt-2">Taxes, discounts and shipping calculated after ordering.</p>
+          <button class="block text-white py-2 px-4 rounded-lg mt-8 mx-auto bg-gradient-to-r from-secondary-light from-70% to-secondary">Order Now</button>
+        </div>
+    </div>
+  </div>
+  <!-- End Cart -->
+  
+      <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+      <script src="../node_modules/axios/dist/axios.min.js"></script>
+      <script src="main.js"></script>
+      <script src="cart.js"></script>
+      <script src="home.js"></script>
 </body>
 </html>
