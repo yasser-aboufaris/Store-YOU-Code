@@ -20,7 +20,7 @@
               <span class="middle-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
               <span class="bottom-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
             </span>
-            <h1 class="text-primary text-3xl font-bold">STORIO</h1>
+            <h1 class="text-primary text-3xl font-bold" id="top">STORIO</h1>
           </div>
           <input autocomplete="off" type="text" placeholder="Search" name="search" class="hidden sm:block w-2/5 focus:w-1/2 transition-all duration-300 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
           <div class="flex justify-between items-center gap-12 text-2xl">
@@ -304,6 +304,61 @@
 
     </section>
     <!-- end Our Customers Reviews-->
+  
+   <!-- star footer -->
+    <section>
+      <div class="bg-[#634C9F] p-5 ">
+        <div class=" flex justify-between pb-6 ">
+          <h1 class="text-start text-white font-bold lg:text-2xl">STORIO</h1>
+          <h1 class="text-end text-white font-semibold lg:text-xl">Back to top <a href="#top"> <i class="fa-solid fa-arrow-up border-2 border-white rounded-full p-2 w-8 lg:w-9"></i></a>  </h1>
+
+        </div>
+        <div class="flex justify-evenly mb-8 " >
+          <div class="text-white  ">
+            <h2 class=" font-semibold pb-3 text-sm lg:text-lg">Links</h2>
+            <div class=" flex flex-col gap-1 lg:gap-4">
+              <h3 class="text-xs font-light lg:text-sm">Home</h3>
+              <h3 class="text-xs font-light lg:text-sm">Categories</h3>
+              <h3 class="text-xs font-light lg:text-sm">Discounts</h3>  
+            </div>
+           
+          </div>
+          <div class="text-white">
+            <h2 class=" font-semibold pb-3 text-sm lg:text-lg">Our Branchs</h2>
+            <div class=" flex flex-col gap-1 lg:gap-4">
+              <h3 class="text-xs font-light lg:text-sm" >Paris</h3>
+              <h3 class="text-xs font-light lg:text-sm">Lille</h3>
+              <h3 class="text-xs font-light lg:text-sm">Monaco</h3>
+            </div>
+            
+          </div>
+          <div class="text-white">
+            <h2 class=" font-semibold pb-3 text-sm lg:text-lg">Let Us Help You</h2>
+            <div class=" flex flex-col gap-1 lg:gap-4">
+              <h3 class="text-xs font-light lg:text-sm">Contact Us</h3>
+              <h3 class="text-xs font-light lg:text-sm">Help Center</h3>
+              <h3 class="text-xs font-light lg:text-sm">Privacy Policy</h3>
+              <h3 class="text-xs font-light lg:text-sm">Terms and Conditions</h3>
+            </div>
+            
+          </div>
+        </div>
+        <div class=" flex justify-between ">
+          <h1 class="text-start text-white text-[4px] lg:text-xs lg:mb-5 ">Copyright 2024 © Storio Holding. All right reserved. </h1>
+          <h1 class="text-end text-white text-[4px] lg:text-xs ">Privacy Policy</h1>
+          
+
+        </div>
+        <div class=" bg-white flex flex-row justify-evenly gap-2 p-1 w-32 rounded-xl lg:w-64 ">
+          <img src="../assets/images/home/footer/visa.svg" alt="" class="w-4 lg:w-8">
+          <img src="../assets/images/home/footer/mastercard.svg" alt="" class="w-4 lg:w-8">
+          <img src="../assets/images/home/footer/paypal.svg" alt="" class="w-4 lg:w-8">
+          <img src="../assets/images/home/footer/skrill.svg" alt="" class="w-4 lg:w-8">
+          
+        </div>
+      </div>
+    </section>
+  <!-- End footer -->
 
   <!-- Cart -->
   <div id="cart-container" class="hidden z-50 fixed top-0 left-0 w-full min-h-screen bg-black bg-opacity-60">
@@ -325,7 +380,6 @@
     </div>
   </div>
   <!-- End Cart -->
-
   
       <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
       <script src="../node_modules/axios/dist/axios.min.js"></script>
