@@ -25,6 +25,9 @@ function displayProducts(products, containerId) {
 
     const visibleProducts = products.slice(startIndex, startIndex + itemsPerPage);
 
+    visibleProducts.forEach(function (product) {
+        container.innerHTML += ``
+    })
 
    
 }
