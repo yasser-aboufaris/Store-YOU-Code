@@ -3,6 +3,9 @@ let cartProducts = [];
 const sizesRate = [1 , 1.10, 1.25];
 
 async function loadProducts() {
+    if (products.length != 0) {
+        return;
+    }
     let response = await axios.get("../products.json");
     products = response.data;
     products.forEach(product => {
