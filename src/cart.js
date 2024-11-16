@@ -25,14 +25,16 @@ function cartEvents() {
     }
 }
 
-function addProductToCard(productId, sizeIndex) {
+function addProductToCard(productId, sizeIndex, isFromLocalStorage = false) {
 
-    Swal.fire({
-        icon: "success",
-        title: "Product added to your cart",
-        showConfirmButton: false,
-        timer: 1500
-      });
+    if (! isFromLocalStorage) {
+        Swal.fire({
+            icon: "success",
+            title: "Product added to your cart",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }
 
     let isExist = cartProducts.findIndex(cartProduct => 
         cartProduct.id == productId && cartProduct.sizeIndex == sizeIndex
@@ -202,6 +204,38 @@ function reloadCart() {
     }else {
         noProductsAlert.classList.add("hidden")
     }
+
+    storeCartProducts();
 }
 
+async function getCartProductsFromLocalStorage() {
+    
+    if (localStorage.getItem("cart-products")) {
+
+        await loadProducts();
+
+        arr = JSON.parse(localStorage.getItem("cart-products"));
+
+        for (let product of arr) {
+            for (let i = 0; i < product.quantity; i++) {
+                addProductToCard(product.id, product.sizeIndex, true);
+            }
+        }
+    }
+}
+
+function storeCartProducts() {
+    let arr = cartProducts.map(product => {
+        return {
+            id: product.id,
+            sizeIndex: product.sizeIndex,
+            quantity: product.quantity
+        }
+    })
+
+    localStorage.setItem("cart-products", JSON.stringify(arr));
+}
+
+
 cartEvents();
+getCartProductsFromLocalStorage();
