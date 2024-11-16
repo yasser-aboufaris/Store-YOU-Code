@@ -21,6 +21,10 @@
     @apply text-center font-bold text-3xl mt-8 mb-16
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html::-webkit-scrollbar {
    @apply w-1
 }
