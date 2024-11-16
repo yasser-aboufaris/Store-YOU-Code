@@ -2,7 +2,8 @@ const cartIcon = document.querySelector("header .cart-icon");
 const cartContainer = document.getElementById("cart-container");
 const cart = cartContainer.querySelector(".cart");
 const productsContainer = cartContainer.querySelector(".products");
-const noProductsAlert = cartContainer.querySelector(".no-products")
+const noProductsAlert = cartContainer.querySelector(".no-products");
+const orderBtn = cartContainer.querySelector(".orderBtn")
 
 function cartEvents() {
     cartContainer.onclick = function (event) {
@@ -23,9 +24,13 @@ function cartEvents() {
             cart.classList.add("right-0");
         }, 0);
     }
+
+    orderBtn.onclick = function () {
+        window.location.href = "checkout.html";
+    }
 }
 
-function addProductToCard(productId, sizeIndex, isFromLocalStorage = false) {
+function addProductToCard(productId, sizeIndex, isFromLocalStorage = false, checked = true) {
 
     if (! isFromLocalStorage) {
         Swal.fire({
@@ -44,14 +49,14 @@ function addProductToCard(productId, sizeIndex, isFromLocalStorage = false) {
         cartProducts[isExist].quantity++;
     }
     else {
-        let product = {...products[productId], sizeIndex, quantity: 1};
+        let product = {...products[productId], sizeIndex, quantity: 1, checked: checked};
         cartProducts.push(product);
     }
 
     reloadCart();
 }
 
-function getProductHtml(id, title, image, quantity, sizeIndex) {
+function getProductHtml(id, title, image, quantity, sizeIndex, checked) {
     let tempDiv = document.createElement("div");
     let activeSizeClasses = "bg-dark text-white";
     let nonActiveSizeClasses = "bg-white text-dark";
@@ -62,7 +67,7 @@ function getProductHtml(id, title, image, quantity, sizeIndex) {
                 <div class="flex items-center gap-4 flex-1">
 
                 <div class="checkbox cursor-pointer relative">
-                    <input checked type="checkbox" name="selected" class="pointer-events-none appearance-none p-3 border-2 border-secondary rounded-lg checked:bg-secondary">
+                    <input ${checked ? "checked": ""} type="checkbox" name="selected" class="pointer-events-none appearance-none p-3 border-2 border-secondary rounded-lg checked:bg-secondary">
                     <i class="absolute text-lg text-white top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 fa-solid fa-check"></i>
                 </div>
 
@@ -101,7 +106,11 @@ function productEvents(product) {
 
     checkbox.onclick = function (){
         checkboxInput.checked = !checkboxInput.checked;
-        refreshTotals();
+        
+        let index = cartProducts.findIndex(cartProduct => cartProduct.id == product.getAttribute("data-id"));
+        cartProducts[index].checked = checkboxInput.checked;
+
+        reloadCart();
     }
 
     let sizes = product.querySelectorAll(".sizes span");
@@ -191,7 +200,7 @@ function reloadCart() {
     productsContainer.innerHTML = "";
 
     cartProducts.forEach(cartProduct => {
-        cartProduct = getProductHtml(cartProduct.id, cartProduct.title, cartProduct.image, cartProduct.quantity, cartProduct.sizeIndex);
+        cartProduct = getProductHtml(cartProduct.id, cartProduct.title, cartProduct.image, cartProduct.quantity, cartProduct.sizeIndex, cartProduct.checked);
 
         productsContainer.appendChild(cartProduct);
         changeProductPriceBasedOnSize(cartProduct);
@@ -218,7 +227,7 @@ async function getCartProductsFromLocalStorage() {
 
         for (let product of arr) {
             for (let i = 0; i < product.quantity; i++) {
-                addProductToCard(product.id, product.sizeIndex, true);
+                addProductToCard(product.id, product.sizeIndex, true, product.checked);
             }
         }
     }
@@ -229,7 +238,8 @@ function storeCartProducts() {
         return {
             id: product.id,
             sizeIndex: product.sizeIndex,
-            quantity: product.quantity
+            quantity: product.quantity,
+            checked: product.checked
         }
     })
 
