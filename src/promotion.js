@@ -18,3 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
 .catch(function (error) {
     console.error('Error fetching:', error);
 });
+
+function displayProducts(products, containerId) {
+    const container = document.querySelector(containerId);
+    container.innerHTML = ''
+
+
+   
+}
