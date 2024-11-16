@@ -12,7 +12,7 @@
 
   <!-- The Header -->
   <header class="relative bg-white">
-    <div class="border-b-2 border-b-gray">
+    <div class="relative z-20 bg-white border-b-2 border-b-gray">
       <div class="container flex justify-between items-center py-4">
           <div class="flex items-center gap-3">
             <span class="menu-icon relative flex flex-col gap-1 sm:hidden">
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="border-b-2 border-b-gray">
+    <div class="relative z-20 bg-white border-b-2 border-b-gray">
       <nav class="hidden sm:flex container py-4 justify-between items-center">
           <ul class="flex items-center gap-6">
               <li class="font-semibold border-b-2 border-b-primary text-primary"><a href="./">Home</a></li>
@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <ul class="menu-links bg-white sm:hidden -z-10 -top-full absolute w-full flex flex-col shadow-2xl rounded-b-2xl transition-all duration-500">
+    <ul class="menu-links bg-white sm:hidden z-10 -top-full absolute w-full flex flex-col shadow-2xl rounded-b-2xl transition-all duration-500">
         <li class="border-b border-b-primary text-primary"><a href="./" class="block w-full py-3 px-5">Home</a></li>
         <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./" class="block w-full py-3 px-5">Categories</a></li>
         <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./" class="block w-full py-3 px-5">Discounts</a></li>
@@ -311,7 +311,7 @@
 
    <!-- star footer -->
     <section>
-      <div class="bg-[#634C9F] p-5 ">
+      <div class="bg-primary p-5 ">
         <div class=" flex justify-between pb-6 ">
           <h1 class="text-start text-white font-bold lg:text-2xl">STORIO</h1>
           <h1 class="text-end text-white font-semibold lg:text-xl">Back to top <a href="#top"> <i class="fa-solid fa-arrow-up border-2 border-white rounded-full p-2 w-8 lg:w-9"></i></a>  </h1>
@@ -388,8 +388,8 @@
   </div>
   <!-- End Cart -->
   
-      <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-      <script src="../node_modules/axios/dist/axios.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="main.js"></script>
       <script src="cart.js"></script>
       <script src="home.js"></script>
