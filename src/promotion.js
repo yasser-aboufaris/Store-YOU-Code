@@ -23,6 +23,8 @@ function displayProducts(products, containerId) {
     const container = document.querySelector(containerId);
     container.innerHTML = ''
 
+    const visibleProducts = products.slice(startIndex, startIndex + itemsPerPage);
+
 
    
 }
