@@ -83,9 +83,10 @@ async function price_Max_Min(n) {
     cardbroduct.innerHTML =''
     if (products.length == 0) {
         await loadProducts();
+        
     }
-
-    for (let i = n; i < 30 + n; i++) {
+    
+    for (let i = n; i <  8 + n; i++) {
         if ((priceInputvalue[0].value <= parseFloat(products[i].price)) && (priceInputvalue[1].value >= parseFloat(products[i].price))) {
             if ((ChekInputvalue[0].checked == true) && ((products[i].category == "Fruits") || (products[i].category == "Vegetables"))) {
                 afichage(products[i].image,products[i].title,products[i].price ,btslist)
@@ -133,7 +134,7 @@ async function price_Max_Min(n) {
 setTimeout(() => price_Max_Min(0) , 4000);
 
 function afichage(image,title ,price ) {      
-    console.log(btslist);
+    
     
       
     if(btslist === 1)
@@ -226,7 +227,7 @@ function fleteractive() {
    } 
 }
 
-const rowsPerPage = 5; 
+const rowsPerPage = 8; 
 let currentPage = 1; 
   
 

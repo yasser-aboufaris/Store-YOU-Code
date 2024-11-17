@@ -881,6 +881,14 @@ video {
   height: 100%;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
 .max-h-20 {
   max-height: 5rem;
 }
@@ -1004,6 +1012,14 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .min-w-10 {
@@ -1242,6 +1258,14 @@ video {
   border-top-width: 2px;
 }
 
+.border-r-2 {
+  border-right-width: 2px;
+}
+
+.border-r {
+  border-right-width: 1px;
+}
+
 .border-bullet {
   --tw-border-opacity: 1;
   border-color: rgb(127 127 127 / var(--tw-border-opacity));
@@ -1361,6 +1385,11 @@ video {
   background-color: rgb(99 76 159 / var(--tw-bg-opacity));
 }
 
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+}
+
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
@@ -1384,16 +1413,6 @@ video {
 .bg-yellow-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
-}
-
-.bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
-}
-
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -1773,6 +1792,11 @@ video {
   color: rgb(99 76 159 / var(--tw-text-opacity));
 }
 
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
 .text-secondary {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
@@ -1802,10 +1826,8 @@ video {
   color: rgb(254 249 195 / var(--tw-text-opacity));
 }
 
-
-.text-red-700 {
-  --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
+.accent-primary {
+  accent-color: #634C9F;
 }
 
 .opacity-0 {
@@ -1954,6 +1976,11 @@ html::-webkit-scrollbar-thumb {
 .hover\:bg-dark:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(86 86 86 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(99 76 159 / var(--tw-bg-opacity));
 }
 
 .hover\:text-primary:hover {
