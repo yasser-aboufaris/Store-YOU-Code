@@ -1,12 +1,42 @@
-const billCard = document.querySelector(".bill-card");
-const billInformations = document.querySelector(".bill-informations");
+const form = document.getElementById("checkout-form");
+
+const billCard = form.querySelector(".bill-card");
+const billInformations = form.querySelector(".bill-informations");
 let checkoutProductsContainer = billCard.querySelector(".bill-card .products");
 
-let coupounInput = document.getElementById("coupoun");
+const fullnameInput = document.getElementById("fullname");
+const emailInput = document.getElementById("email");
+const addressInput = document.getElementById("address");
+const coupounInput = document.getElementById("coupoun");
+const orderNoteInput = document.getElementById("notes");
+const agreeInput = document.getElementById("agree");
 
 const coupoun = "youcode";
 const coupounDiscount = 0.10; // 10%
+let total = 0;
 let checkoutProducts = [];
+
+form.onsubmit = function(e) {
+    e.preventDefault();
+    
+    let message = validateInputs();
+
+    if (message != 1) {
+        showAlert(message);
+        return;
+    }
+
+    removeCheckedProductsFromCart();
+
+    Swal.fire({
+        icon: "success",
+        title: "Your order has been placed successfully",
+        showConfirmButton: false,
+        timer: 1500
+    }).then(() => {
+        window.location.href = './';
+    });;
+}
 
 function loadCheckoutProducts() {
     checkoutProducts = cartProducts.filter(product => product.checked); // Get checked products from the cart
@@ -97,13 +127,54 @@ function billCardCalculations() {
     }
     billCard.querySelector(".coupoun").textContent = "-" + discount.toFixed(2) + "$";
 
-    let total = subtotal2 - discount;
+    total = subtotal2 - discount;
     billCard.querySelector(".total").textContent = total.toFixed(2) + "$";
 }
 
 function removeCheckedProductsFromCart() {
     cartProducts = cartProducts.filter(product => !product.checked); // Delete checked products from the cart
     reloadCart();
+}
+
+function validateInputs() {
+    let inputs = [fullnameInput, emailInput, addressInput];
+    for (let input of inputs) {
+        if (input.value.trim() == "") {
+            return "Please fill all the required fields.";
+        }
+    }
+
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (! emailRegex.test(emailInput.value)) {
+        return "Invalid format for the email."
+    }
+
+    if (! agreeInput.checked) {
+        return "You need to agree with the terms and conditions.";
+    }
+
+    return 1;
+}
+
+function showAlert(message) {
+    let alertElement = document.getElementById("alert");
+    alertElement.textContent = message;
+    alertElement.classList.remove("hidden");
+
+    let inputs = [fullnameInput, emailInput, addressInput];
+
+    for (let input of inputs) {
+        input.onfocus = function() {
+            hideAlert();
+        }
+    }
+    agreeInput.onchange = function() {
+        hideAlert();
+    }
+}
+function hideAlert() {
+    let alertElement = document.getElementById("alert");
+    alertElement.classList.add("hidden");
 }
 
 const interval = setInterval(() => {
