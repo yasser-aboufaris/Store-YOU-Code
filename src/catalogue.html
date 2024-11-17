@@ -41,16 +41,18 @@
         <div class="relative z-20 bg-white border-b-2 border-b-gray">
             <nav class="hidden sm:flex container py-4 justify-between items-center">
                 <ul class="flex items-center gap-6">
-                    <li class="font-semibold border-b-2 border-b-primary text-primary"><a href="./">Home</a></li>
+                    <li class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300">
+                        <a href="./">Home</a>
+                    </li>
+                    <li
+                        class="font-semibold border-b-2 border-b-primary text-primary">
+                        <a href="./catalogue.html">Categories</a></li>
                     <li
                         class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300">
-                        <a href="./">Categories</a></li>
+                        <a href="./promotion.html">Discounts</a></li>
                     <li
                         class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300">
-                        <a href="./">Discounts</a></li>
-                    <li
-                        class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300">
-                        <a href="./">Contact Us</a></li>
+                        <a href="./contact.html">Contact Us</a></li>
                 </ul>
 
                 <span class="text-secondary font-semibold">Save More With Storio Card</span>
@@ -64,12 +66,17 @@
 
         <ul
             class="menu-links bg-white sm:hidden z-10 -top-full absolute w-full flex flex-col shadow-2xl rounded-b-2xl transition-all duration-500">
-            <li class="border-b border-b-primary text-primary"><a href="./" class="block w-full py-3 px-5">Home</a></li>
-            <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a
-                    href="./" class="block w-full py-3 px-5">Categories</a></li>
-            <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a
-                    href="./" class="block w-full py-3 px-5">Discounts</a></li>
-            <li class="hover:text-primary"><a href="./" class="block w-full py-3 px-5">Contact Us</a></li>
+            <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300">
+                <a href="./" class="block w-full py-3 px-5">Home</a>
+            </li>
+            <li class="border-b border-b-primary text-primary">
+                <a href="./catalogue.html" class="block w-full py-3 px-5">Categories</a>
+            </li>
+            <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300">
+                <a href="./promotion.html" class="block w-full py-3 px-5">Discounts</a></li>
+            <li class="hover:text-primary">
+                <a href="./contact.html" class="block w-full py-3 px-5">Contact Us</a>
+            </li>
         </ul>
     </header>
     <!-- The Header End -->
@@ -89,10 +96,10 @@
     <!-- end hero section  -->
 
     <section class="mt-2">
-        <div class="flex relative z-10 justify-center md:flex md:justify-start border-t-2 border-gray">
-            <div class="w-[300px]  bg-white md:block	 border-gray border-2 absolute top-20   md:static fleter">
+        <div class="flex relative justify-center md:flex md:justify-start border-t-2 border-gray">
+            <div class="w-[300px] z-[7] bg-white md:block	 border-gray border-2 absolute top-20   md:static fleter">
                 <div class="py-3">
-                    <h3 class="text-primary py-2 font-bold ">Widget price filter</h3>
+                    <h3 class="text-primary py-3 px-2 font-bold ">Widget price filter</h3>
                     <div class="flex gap-2 px-2">
                         <div class="price-input">
                             <label for="Minprice">Min price</label>
@@ -102,17 +109,17 @@
                         <div class="price-input">
                             <label for="Maxprice">Max price</label>
                             <input type="number" name="price" id="Maxprice" class="w-full border py-1 px-3 rounded-lg "
-                                value="200">
+                                value="1000">
                         </div>
                     </div>
                     <div
                         class="flex justify-center items-center relative h-2 mx-2 bg-gray rounded-xl  my-4  range-input">
 
-                        <input class="absolute w-full pointer-events-none min-range" type="range" min="0" max="200">
-                        <input type="range" class="w-full absolute pointer-events-none" min="0" max="200">
+                        <input class="absolute w-full pointer-events-none min-range" type="range" min="0" max="1000">
+                        <input type="range" class="w-full absolute pointer-events-none" min="0" max="1000">
                     </div>
                     <div class="flex justify-between px-2">
-                        <p>Price: $<span>0</span> — $ <span>200</span></p>
+                        <p>Price: $<span id="minpr">0</span> — $ <span id="maxpr">200</span></p>
                         <button type="button" class="rounded-lg px-2 py-1 bg-primary text-fuchsia-50"
                             onclick="price_Max_Min(0)"> Filter</button>
                     </div>
@@ -124,7 +131,7 @@
                     <h3 class="text-primary font-bold py-3">Product Categories</h3>
                     <label for="vehicle1" class="relative w-[90%] flex items-center ">
                         <input type="checkbox" id="vehicle1" name="" value="" onclick="price_Max_Min(0)"
-                            class="w-4 h-4 accent-primary  rounded focus:bg-primary "> Fruits & Vegetables <span
+                            class="w-4 h-4 accent-primary  rounded focus:bg-primary ">Fruits & Vegetables <span
                             class="absolute right-0 text-gray-dark">+</span>
                     </label>
                     <label for="vehicle2" class="relative w-[90%]">
@@ -151,6 +158,16 @@
                             class="w-4 h-4 accent-primary  rounded focus:bg-primary">Frozen Foods<span
                             class="absolute right-0 text-gray-dark">+</span>
                     </label>
+                    <label for="vehicle7" class="relative w-[90%]">
+                        <input type="checkbox" id="vehicle7" name="" value="" onclick="price_Max_Min(0)"
+                            class="w-4 h-4 accent-primary  rounded focus:bg-primary"> Juices<span
+                            class="absolute right-0 text-gray-dark">+</span>
+                    </label>
+                    <label for="vehicle8" class="relative w-[90%]">
+                        <input type="checkbox" id="vehicle8" name="" value="" onclick="price_Max_Min(0)"
+                            class="w-4 h-4 accent-primary  rounded focus:bg-primary">Electronics<span
+                            class="absolute right-0 text-gray-dark">+</span>
+                    </label>
 
                 </div>
                 <div class="flex justify-end p-2 md:hidden">
@@ -159,38 +176,38 @@
                 </div>
 
             </div>
-            <div class="flex flex-col 	 justify-start  w-full  gap-3   ">
+            <div class="relative flex flex-col z-[5] justify-start  w-full  gap-3   ">
 
                 <div class="flex justify-around items-center w-full border-b-2 h-[60px] border-gray px-1">
                     <div class="md:hidden bol-list">
-                        <i class="fa-solid fa-list font-bold text-[30px]	" onclick="fleteractive()"></i>
+                        <i class="fa-solid fa-list font-bold text-[20px]	" onclick="fleteractive()"></i>
                     </div>
                     <div class="flex justify-around w-full">
-                        <span class="hidden md:block">Showing all 16 results</span>
-                        <div class="flex">
-                            <span class="hidden md:block">Sort By Price :</span>
+                        <span class="hidden p-3 md:block" id="results">Showing all 16 results</span>
+                        <div class="flex p-3">
+                            <span class="hidden  md:block">Sort By Price :</span>
                             <div class="flex">Asc <img src="../assets/images/home/categories/sortnumericupalt.svg"
-                                    alt=""> </div>
+                                    alt="" width="15px" height="10px"> </div>
                         </div>
-                        <div class="flex">
+                        <div class="flex p-3">
                             <span class="hidden md:block"> Sort By Name :</span>
-                            <div class="flex">Asc <img src="../assets/images/home/categories/SortByName.svg" alt="">
+                            <div class="flex">Asc <img src="../assets/images/home/categories/SortByName.svg" alt="" width="15px" height="10px">
                             </div>
                         </div>
-                        <div>
-                            <button onclick="listgrid()"><img src="../assets/images/home/categories/listcard.svg"
+                        <div class="flex items-center justify-center gap-2">
+                            <button onclick="listgrid()" class="rounded-xl	 bg-gray-dark p-3 "><img src="../assets/images/home/categories/listcard.svg" width="20px" height="10px"
                                     alt=""></button>
-                            <button onclick="listlin()"><img src="../assets/images/home/categories/Iconlist.svg"
-                                    alt=""></button>
+                            <button onclick="listlin()" class="opacity-35 rounded-xl	 bg-gray-dark p-2 "><img src="../assets/images/home/categories/Iconlist.svg"
+                                    alt="" width="25px" height="35px"></button>
                         </div>
 
                     </div>
                 </div>
-                <div id="main-products" class="flex flex-row flex-wrap justify-center items-center w-full gap-x-3 gap-y-6 cardbroduct z-10">
+                <div class="main-products flex flex-row flex-wrap justify-center items-center w-full gap-x-3 gap-y-6 cardbroduct z-10">
                 </div>
                 
                 <!-- Pagination -->
-                <div class="w-full flex mb-4 ">
+                <div class="w-full flex my-4 ">
                     <ul id="pagination" class="w-full flex gap-3 justify-center items-center">
                         <!-- Les éléments de pagination seront générés dynamiquement -->
                     </ul>
