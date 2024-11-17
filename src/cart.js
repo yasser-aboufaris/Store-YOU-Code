@@ -8,6 +8,7 @@ const noProductsAlert = cartContainer.querySelector(".no-products");
 const orderBtn = cartContainer.querySelector(".orderBtn")
 
 function cartEvents() {
+
     cartContainer.onclick = function (event) {
         if (event.target == cartContainer) {
             cart.classList.add("-right-full");
@@ -38,7 +39,7 @@ function cartEvents() {
 }
 
 function addProductToCard(productId, sizeIndex, isFromLocalStorage = false, checked = true) {
-
+    
     if (! isFromLocalStorage) {
         Swal.fire({
             icon: "success",
@@ -56,6 +57,7 @@ function addProductToCard(productId, sizeIndex, isFromLocalStorage = false, chec
         cartProducts[isExist].quantity++;
     }
     else {
+        orderBtn.disabled = false;
         let product = {...products[productId], sizeIndex, quantity: 1, checked: checked};
         cartProducts.push(product);
     }
@@ -107,7 +109,7 @@ function getProductHtml(id, title, image, quantity, sizeIndex, checked) {
     return tempDiv.firstElementChild // To return Node element instead of string
 }
 
-function productEvents(product) {
+function productCartEvents(product) {
     let checkbox = product.querySelector(".checkbox");
     let checkboxInput = checkbox.querySelector("input");
 
@@ -219,7 +221,7 @@ function reloadCart() {
 
         productsContainer.appendChild(cartProduct);
         changeProductPriceBasedOnSize(cartProduct);
-        productEvents(cartProduct);
+        productCartEvents(cartProduct);
     })
     refreshTotals();
 
@@ -297,6 +299,43 @@ function loadCartHtml() {
   <!-- End Cart -->
   `
     document.body.appendChild(tempDiv.firstElementChild);
+}
+
+function pageProductsEvents() {
+    document.querySelectorAll("#main-products .product").forEach(function(product) {
+        
+        let indexOfClickedBtn = 0;
+
+        product.querySelector(".buy-icon").addEventListener("click", () => addProductToCard(product.getAttribute("data-id"), indexOfClickedBtn));
+
+        let sizesButtons = product.querySelectorAll(".sizes div");
+
+        sizesButtons.forEach((sizeButton, i) => {
+            let sizesDiv = sizeButton.parentElement;
+    
+            sizeButton.onclick = function (){
+                if(indexOfClickedBtn == i) return;
+
+                sizesButtons.forEach((btn) => {
+                    if (btn.classList.contains("text-white") || btn == sizeButton) {
+                        toggleColors(btn);
+                    }
+                });
+    
+                indexOfClickedBtn = i;
+                product.setAttribute("data-size-index", indexOfClickedBtn);
+                changeProductPriceBasedOnSize(product);
+    
+                let overlay = sizesDiv.querySelector(".active-overlay");
+                overlay.style.left = `calc(2.25rem * ${indexOfClickedBtn} + .5rem * ${indexOfClickedBtn} + 2px)`;
+            }
+        })
+    })
+
+    function toggleColors(btn) {
+        btn.classList.toggle(`text-white`);
+        btn.classList.toggle(`text-bullet`);
+    }
 }
 
 
