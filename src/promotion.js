@@ -1,3 +1,18 @@
+
+let imageElement = document.getElementById('image');
+
+let images = [ '../assets/images/home/promotion/hero-1.svg','../assets/images/home/promotion/hero-2.svg','../assets/images/home/promotion/hero-3.svg','../assets/images/home/promotion/hero-4.svg'];
+
+
+let Index = 0;
+setInterval(function() {
+ imageElement.src = images[Index];
+ Index = (Index + 1) % images.length;
+ }, 3000);
+
+
+
+
 let startIndex = 0;
 const itemsPerPage = 4;
 
