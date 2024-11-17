@@ -41,6 +41,10 @@ form.onsubmit = function(e) {
 function loadCheckoutProducts() {
     checkoutProducts = cartProducts.filter(product => product.checked); // Get checked products from the cart
     
+    if (checkoutProducts.length == 0) {
+        window.location.href = "./";
+    }
+
     checkoutProducts = checkoutProducts.map(function(product) {
         return {
             id: product.id,
