@@ -993,6 +993,10 @@ video {
   width: 1rem;
 }
 
+.w-44 {
+  width: 11rem;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -2014,6 +2018,16 @@ html::-webkit-scrollbar-thumb {
 .rotate-up {
   position: absolute;
   transform: rotate(-45deg);
+}
+
+.placeholder\:text-black::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-black::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .placeholder\:text-gray-dark::-moz-placeholder {
