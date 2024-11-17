@@ -86,41 +86,7 @@ async function productsSection() {
         container.innerHTML += getBestSellingCard(product.id, product.title, product.price, product.image);
     }
 
-
-    container.querySelectorAll(".product").forEach(function(product) {
-        
-        let indexOfClickedBtn = 0;
-
-        product.querySelector(".buy-icon").addEventListener("click", () => addProductToCard(product.getAttribute("data-id"), indexOfClickedBtn));
-
-        let sizesButtons = product.querySelectorAll(".sizes div");
-
-        sizesButtons.forEach((sizeButton, i) => {
-            let sizesDiv = sizeButton.parentElement;
-    
-            sizeButton.onclick = function (){
-                if(indexOfClickedBtn == i) return;
-
-                sizesButtons.forEach((btn) => {
-                    if (btn.classList.contains("text-white") || btn == sizeButton) {
-                        toggleColors(btn);
-                    }
-                });
-    
-                indexOfClickedBtn = i;
-                product.setAttribute("data-size-index", indexOfClickedBtn);
-                changeProductPriceBasedOnSize(product);
-    
-                let overlay = sizesDiv.querySelector(".active-overlay");
-                overlay.style.left = `calc(2.25rem * ${indexOfClickedBtn} + .5rem * ${indexOfClickedBtn} + 2px)`;
-            }
-        })
-    })
-
-    function toggleColors(btn) {
-        btn.classList.toggle(`text-white`);
-        btn.classList.toggle(`text-bullet`);
-    }
+    pageProductsEvents();
 }
 
 hero();
