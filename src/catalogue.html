@@ -7,27 +7,8 @@
     <link rel="stylesheet" href="../assets/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="output.css">
-    <style>
-        input[type="range"] {
-            background: none;
-            -webkit-appearance: none;
-        }
+    <link rel="stylesheet" href="./categories.css">
 
-        input[type="range"]::-webkit-slider-thumb {
-            height: 20px;
-            width: 20px;
-            border-radius: 70%;
-            background: #634C9F;
-            pointer-events: auto;
-            -webkit-appearance: none;
-        }
-
-        @media (max-width: 768px) {
-            .fleter {
-                display: none;
-            }
-        }
-    </style>
 
 </head>
 
@@ -107,7 +88,7 @@
 
     <!-- end hero section  -->
 
-    <section class="mt-2 pb-2">
+    <section class="mt-2">
         <div class="flex relative z-10 justify-center md:flex md:justify-start border-t-2 border-gray">
             <div class="w-[300px]  bg-white md:block	 border-gray border-2 absolute top-20   md:static fleter">
                 <div class="py-3">
@@ -209,7 +190,7 @@
                 </div>
                 
                 <!-- Pagination -->
-                <div class="w-full flex">
+                <div class="w-full flex mb-4 ">
                     <ul id="pagination" class="w-full flex gap-3 justify-center items-center">
                         <!-- Les éléments de pagination seront générés dynamiquement -->
                     </ul>
@@ -269,9 +250,10 @@
 </section>
 <!-- End footer -->
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="catalogue.js"></script>
-<script src="../node_modules/axios/dist/axios.min.js"></script>
 <script src="main.js"></script>
+<script src="./Pagination.js"></script>
 
 </body>
 </html>
