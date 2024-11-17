@@ -71,7 +71,7 @@ function getProductHtml(id, title, image, quantity, sizeIndex, checked) {
     let nonActiveSizeClasses = "bg-white text-dark";
 
     tempDiv.innerHTML = `
-            <div data-id="${id}" data-size-index="${sizeIndex}" class="product flex justify-between items-center gap-6">
+            <div data-id="${id}" data-size-index="${sizeIndex}" class="product flex justify-between items-center gap-3 sm:gap-6">
 
                 <div class="flex items-center gap-4 flex-1">
 
@@ -84,16 +84,16 @@ function getProductHtml(id, title, image, quantity, sizeIndex, checked) {
                     <div class="flex flex-col items-center gap-2">
 
                     <img src="${image}" class="max-w-24 max-h-20" alt="">
-                    <div class="sizes flex gap-x-2">
-                        <span class="${ sizeIndex == 0 ? activeSizeClasses : nonActiveSizeClasses} border-[1.5px] border-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">SM</span>
-                        <span class="${ sizeIndex == 1 ? activeSizeClasses : nonActiveSizeClasses} border-[1.5px] border-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">MD</span>
-                        <span class="${ sizeIndex == 2 ? activeSizeClasses : nonActiveSizeClasses} border-[1.5px] border-dark cursor-pointer py-0.5 w-10 text-center rounded-xl font-bold text-xs hover:bg-dark hover:text-white transition-all duration-300">LG</span>
+                    <div class="sizes flex gap-x-1 sm:gap-x-2">
+                        <span class="${ sizeIndex == 0 ? activeSizeClasses : nonActiveSizeClasses} border-[1.5px] border-dark cursor-pointer py-0.5 w-8 sm:w-10 text-center rounded-xl font-bold text-[.6rem] sm:text-xs hover:bg-dark hover:text-white transition-all duration-300">SM</span>
+                        <span class="${ sizeIndex == 1 ? activeSizeClasses : nonActiveSizeClasses} border-[1.5px] border-dark cursor-pointer py-0.5 w-8 sm:w-10 text-center rounded-xl font-bold text-[.6rem] sm:text-xs hover:bg-dark hover:text-white transition-all duration-300">MD</span>
+                        <span class="${ sizeIndex == 2 ? activeSizeClasses : nonActiveSizeClasses} border-[1.5px] border-dark cursor-pointer py-0.5 w-8 sm:w-10 text-center rounded-xl font-bold text-[.6rem] sm:text-xs hover:bg-dark hover:text-white transition-all duration-300">LG</span>
                     </div>
 
                     </div>
                     <div class="flex flex-col justify-end gap-4 flex-1">
                     <p class="text-sm font-semibold">${title}</p>
-                    <div class="controll-quantity text-2xl flex justify-end items-center gap-2">
+                    <div class="controll-quantity text-lg sm:text-2xl flex justify-end items-center gap-1 sm:gap-2">
                         <i class="${quantity > 1 ? "hidden" : ""} delete cursor-pointer text-secondary-light fa-solid fa-trash-can"></i>
                         <i class="${quantity == 1 ? "hidden" : ""} minus cursor-pointer text-secondary-light fa-solid fa-minus"></i>
                         <span class="quantity select-none px-3 text-lg border border-secondary-light rounded-lg">${quantity}</span>
@@ -103,7 +103,7 @@ function getProductHtml(id, title, image, quantity, sizeIndex, checked) {
                 </div>
                 </div>
 
-                <h2 class="price min-w-[5.5rem] text-right text-3xl"></h2>
+                <h2 class="price w-fit sm:min-w-[5.5rem] text-right text-xl sm:text-3xl"></h2>
             </div>`
     
     return tempDiv.firstElementChild // To return Node element instead of string
@@ -288,10 +288,10 @@ function loadCartHtml() {
 
             <div class="px-5 border-t-2 border-t-gray py-4">
             <div class="flex justify-between text-3xl">
-                <h3 class="font-semibold">Selected: <span class="total-selected-price">0</span>$</h3>
-                <h3 class="font-semibold">Total: <span class="total-price">0</span>$</h3>
+                <h3 class="font-semibold text-lg sm:text-3xl">Selected: <span class="total-selected-price">0</span>$</h3>
+                <h3 class="font-semibold text-lg sm:text-3xl">Total: <span class="total-price">0</span>$</h3>
             </div>
-            <p class="text-gray-dark text-sm mt-2">Taxes, discounts and shipping calculated after ordering.</p>
+            <p class="text-gray-dark text-xs sm:text-sm mt-2">Taxes, discounts and shipping calculated after ordering.</p>
             <button type="submit" disabled class="block orderBtn disabled:opacity-60 text-white py-2 px-4 rounded-lg mt-8 mx-auto bg-gradient-to-r from-secondary-light from-70% to-secondary">Order Now</button>
             </div>
         </div>
@@ -302,35 +302,37 @@ function loadCartHtml() {
 }
 
 function pageProductsEvents() {
-    document.querySelectorAll("#main-products .product").forEach(function(product) {
+    document.querySelectorAll(".main-products").forEach(function(mainContainer){
+        mainContainer.querySelectorAll(".product").forEach(function(product) {
         
-        let indexOfClickedBtn = 0;
-
-        product.querySelector(".buy-icon").addEventListener("click", () => addProductToCard(product.getAttribute("data-id"), indexOfClickedBtn));
-
-        let sizesButtons = product.querySelectorAll(".sizes div");
-
-        sizesButtons.forEach((sizeButton, i) => {
-            let sizesDiv = sizeButton.parentElement;
+            let indexOfClickedBtn = 0;
     
-            sizeButton.onclick = function (){
-                if(indexOfClickedBtn == i) return;
-
-                sizesButtons.forEach((btn) => {
-                    if (btn.classList.contains("text-white") || btn == sizeButton) {
-                        toggleColors(btn);
-                    }
-                });
+            product.querySelector(".buy-icon").addEventListener("click", () => addProductToCard(product.getAttribute("data-id"), indexOfClickedBtn));
     
-                indexOfClickedBtn = i;
-                product.setAttribute("data-size-index", indexOfClickedBtn);
-                changeProductPriceBasedOnSize(product);
+            let sizesButtons = product.querySelectorAll(".sizes div");
     
-                let overlay = sizesDiv.querySelector(".active-overlay");
-                overlay.style.left = `calc(2.25rem * ${indexOfClickedBtn} + .5rem * ${indexOfClickedBtn} + 2px)`;
-            }
-        })
-    })
+            sizesButtons.forEach((sizeButton, i) => {
+                let sizesDiv = sizeButton.parentElement;
+        
+                sizeButton.onclick = function (){
+                    if(indexOfClickedBtn == i) return;
+    
+                    sizesButtons.forEach((btn) => {
+                        if (btn.classList.contains("text-white") || btn == sizeButton) {
+                            toggleColors(btn);
+                        }
+                    });
+        
+                    indexOfClickedBtn = i;
+                    product.setAttribute("data-size-index", indexOfClickedBtn);
+                    changeProductPriceBasedOnSize(product);
+        
+                    let overlay = sizesDiv.querySelector(".active-overlay");
+                    overlay.style.left = `calc(2.25rem * ${indexOfClickedBtn} + .5rem * ${indexOfClickedBtn} + 2px)`;
+                }
+            })
+        });    
+    });
 
     function toggleColors(btn) {
         btn.classList.toggle(`text-white`);
