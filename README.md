@@ -12,7 +12,6 @@
 4. [Fonctionnalités](#fonctionnalités)  
 5. [Instructions d'Installation](#instructions-dinstallation)  
 6. [Contributions](#contributions)  
-7. [Licence](#licence)  
 
 ---
 
@@ -71,6 +70,6 @@ Le projet a pour but :
 
 ##  Instructions d'Installation
 
-1. Clonez ce dépôt :  
+- Clonez ce dépôt :  
    ```bash
    git clone https://github.com/votre-repo/storify.git
