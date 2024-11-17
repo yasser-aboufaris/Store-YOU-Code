@@ -1,4 +1,3 @@
-
 let imageElement = document.getElementById('image');
 
 let images = [ '../assets/images/home/promotion/hero-1.svg','../assets/images/home/promotion/hero-2.svg','../assets/images/home/promotion/hero-3.svg','../assets/images/home/promotion/hero-4.svg'];
