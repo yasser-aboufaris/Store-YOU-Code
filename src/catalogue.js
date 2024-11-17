@@ -6,7 +6,7 @@ priceInputvalue[0].value = 0;
 priceInputvalue[1].value = 200;
 rangeInputvalue[0].value = 0;
 rangeInputvalue[1].value = 200;
-
+let contuer =0;
 let btslist = 0
 
 
@@ -86,45 +86,53 @@ async function price_Max_Min(n) {
         
     }
     
-    for (let i = n; i <  8 + n; i++) {
+    for (let i = n; i <  products.length; i++) {
         if ((priceInputvalue[0].value <= parseFloat(products[i].price)) && (priceInputvalue[1].value >= parseFloat(products[i].price))) {
             if ((ChekInputvalue[0].checked == true) && ((products[i].category == "Fruits") || (products[i].category == "Vegetables"))) {
                 afichage(products[i].image,products[i].title,products[i].price ,btslist)
-               
+                contuer++
             }
             if ((ChekInputvalue[1].checked == true ) && (products[i].category === "Beverages")) {
                 afichage(products[i].image,products[i].title,products[i].price ,btslist)
 
-
+                contuer++
             }
             if ((ChekInputvalue[2].checked == true) && (products[i].category === "Meats & Seafood")) {
                 afichage(products[i].image,products[i].title,products[i].price ,btslist)
                 
-
+                contuer++
             }
             if ((ChekInputvalue[3].checked == true) && (products[i].category === "Biscuits & Snacks")) {
                 afichage(products[i].image,products[i].title,products[i].price ,btslist)
-
+                contuer++
             }
             if ((ChekInputvalue[4].checked == true) && (products[i].category === "Breads & Bakery")) {
                 afichage(products[i].image,products[i].title,products[i].price ,btslist)
-
+                contuer++
 
 
             }
             if ((ChekInputvalue[5].checked == true) && (products[i].category === "Frozen Foods")) {
                 afichage(products[i].image,products[i].title,products[i].price ,btslist)
+                contuer++
             }
 
 
             if ((ChekInputvalue[0].checked == false) && (ChekInputvalue[1].checked == false) && (ChekInputvalue[2].checked == false) && (ChekInputvalue[3].checked == false) && (ChekInputvalue[4].checked == false) && (ChekInputvalue[5].checked == false)) {
 
                 afichage(products[i].image,products[i].title,products[i].price ,btslist)
+                contuer++
 
             }
 
 
 
+
+        }
+        if( contuer === 8)
+        {
+            contuer = 0
+            break
 
         }
 
