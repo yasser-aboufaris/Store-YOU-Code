@@ -13,51 +13,70 @@
     <!-- The Header -->
     <header class="relative bg-white">
       <div class="relative z-20 bg-white border-b-2 border-b-gray">
-        <div class="container flex justify-between items-center py-4">
-            <div class="flex items-center gap-3">
-              <span class="menu-icon relative flex flex-col gap-1 sm:hidden">
-                <span class="top-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
-                <span class="middle-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
-                <span class="bottom-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
-              </span>
-              <h1 class="text-primary text-3xl font-bold" id="top">STORIO</h1>
-            </div>
-            <input autocomplete="off" type="text" placeholder="Search" name="search" class="hidden sm:block w-2/5 focus:w-1/2 transition-all duration-300 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
-            <div class="flex justify-between items-center gap-12 text-2xl">
-                <i class="fa-solid fa-user cursor-pointer hover:text-primary transition-all duration-300"></i>
-                <span class="cart-icon cursor-pointer relative">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                  <span class="count absolute -top-1 -right-2 w-4 h-4 text-sm rounded-full bg-secondary text-white flex justify-center items-center">0</span>
-                </span>
-            </div>
-        </div>
+          <div class="container flex justify-between items-center py-4">
+              <div class="flex items-center gap-3">
+                  <span class="menu-icon relative flex flex-col gap-1 sm:hidden">
+                      <span class="top-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
+                      <span class="middle-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
+                      <span class="bottom-line w-5 h-[2.6px] bg-black block transition-all duration-300"></span>
+                  </span>
+                  <h1 class="text-primary text-3xl font-bold" id="top">STORIO</h1>
+              </div>
+              <input autocomplete="off" type="text" placeholder="Search" name="search"
+                  class="hidden sm:block w-2/5 focus:w-1/2 transition-all duration-300 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
+              <div class="flex justify-between items-center gap-12 text-2xl">
+                  <i class="fa-solid fa-user cursor-pointer hover:text-primary transition-all duration-300"></i>
+                  <span class="cart-icon cursor-pointer relative">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                      <span
+                          class="count absolute -top-1 -right-2 w-4 h-4 text-sm rounded-full bg-secondary text-white flex justify-center items-center">0</span>
+                  </span>
+              </div>
+          </div>
       </div>
-  
+
       <div class="relative z-20 bg-white border-b-2 border-b-gray">
-        <nav class="hidden sm:flex container py-4 justify-between items-center">
-            <ul class="flex items-center gap-6">
-                <li class="font-semibold border-b-2 border-b-primary text-primary"><a href="index.html">Home</a></li>
-                <li class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300"><a href="catalogue.html">Categories</a></li>
-                <li class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300"><a href="promotion.html">Discounts</a></li>
-                <li class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300"><a href="contact.html">Contact Us</a></li>
-            </ul>
-  
-            <span class="text-secondary font-semibold">Save More With Storio Card</span>
-        </nav>
-  
-        <div class="container py-4 flex justify-center items-center sm:hidden">
-          <input autocomplete="off" type="text" placeholder="Search" name="search" class="w-10/12 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
-        </div>
+          <nav class="hidden sm:flex container py-4 justify-between items-center">
+              <ul class="flex items-center gap-6">
+                  <li class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300">
+                    <a href="./">Home</a>
+                  </li>
+                  <li
+                      class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300">
+                      <a href="./catalogue.html">Categories</a></li>
+                  <li
+                      class="font-semibold border-b-2 border-b-primary text-primary">
+                      <a href="./promotion.html">Discounts</a></li>
+                  <li
+                      class="font-semibold border-b-2 border-b-transparent hover:border-b-primary hover:text-primary transition-all duration-300">
+                      <a href="./contact.html">Contact Us</a></li>
+              </ul>
+
+              <span class="text-secondary font-semibold">Save More With Storio Card</span>
+          </nav>
+
+          <div class="container py-4 flex justify-center items-center sm:hidden">
+              <input autocomplete="off" type="text" placeholder="Search" name="search"
+                  class="w-10/12 outline-none bg-gray placeholder:text-gray-dark rounded-xl py-2 px-4">
+          </div>
       </div>
-  
-      <ul class="menu-links bg-white sm:hidden z-10 -top-full absolute w-full flex flex-col shadow-2xl rounded-b-2xl transition-all duration-500">
-          <li class="border-b border-b-primary text-primary"><a href="./" class="block w-full py-3 px-5">Home</a></li>
-          <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./" class="block w-full py-3 px-5">Categories</a></li>
-          <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300"><a href="./" class="block w-full py-3 px-5">Discounts</a></li>
-          <li class="hover:text-primary"><a href="./" class="block w-full py-3 px-5">Contact Us</a></li>
+
+      <ul
+          class="menu-links bg-white sm:hidden z-10 -top-full absolute w-full flex flex-col shadow-2xl rounded-b-2xl transition-all duration-500">
+          <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300">
+              <a href="./" class="block w-full py-3 px-5">Home</a>
+          </li>
+          <li class="border-b border-b-gray hover:border-b-primary hover:text-primary transition-all duration-300">
+              <a href="./catalogue.html" class="block w-full py-3 px-5">Categories</a>
+          </li>
+          <li class="border-b border-b-primary text-primary">
+              <a href="./promotion.html" class="block w-full py-3 px-5">Discounts</a></li>
+          <li class="hover:text-primary">
+              <a href="./contact.html" class="block w-full py-3 px-5">Contact Us</a>
+          </li>
       </ul>
-    </header>
-    <!-- The Header End -->
+  </header>
+  <!-- The Header End -->
   
       <!-- hero  -->
       <section>
