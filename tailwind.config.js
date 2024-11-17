@@ -12,7 +12,8 @@ module.exports = {
         'gray': "#EFEFEF",
         'gray-dark': "#AAAAAA",
         'dark': "#565656",
-        'bullet': "#7F7F7F"
+        'bullet': "#7F7F7F",
+        'violet': "#634C9F"
       },
     },
   },
