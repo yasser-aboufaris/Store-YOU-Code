@@ -1,3 +1,5 @@
+loadCartHtml();
+
 const cartIcon = document.querySelector("header .cart-icon");
 const cartContainer = document.getElementById("cart-container");
 const cart = cartContainer.querySelector(".cart");
@@ -26,7 +28,12 @@ function cartEvents() {
     }
 
     orderBtn.onclick = function () {
-        window.location.href = "checkout.html";
+        for (let product of cartProducts) {
+            if (product.checked) {
+                window.location.href = "checkout.html";
+                return;
+            }
+        }
     }
 }
 
@@ -107,8 +114,16 @@ function productEvents(product) {
     checkbox.onclick = function (){
         checkboxInput.checked = !checkboxInput.checked;
         
-        let index = cartProducts.findIndex(cartProduct => cartProduct.id == product.getAttribute("data-id"));
+        let index = cartProducts.findIndex(cartProduct => cartProduct.id == product.getAttribute("data-id") && cartProduct.sizeIndex == product.getAttribute("data-size-index"));
         cartProducts[index].checked = checkboxInput.checked;
+
+        orderBtn.disabled = true;
+        for (let product of cartProducts) {
+            if (product.checked) {
+                orderBtn.disabled = false;
+                break;
+            }
+        }
 
         reloadCart();
     }
@@ -230,6 +245,14 @@ async function getCartProductsFromLocalStorage() {
                 addProductToCard(product.id, product.sizeIndex, true, product.checked);
             }
         }
+
+        orderBtn.disabled = true;
+        for (let product of cartProducts) {
+            if (product.checked) {
+                orderBtn.disabled = false;
+                break;
+            }
+        }
     }
 }
 
@@ -244,6 +267,36 @@ function storeCartProducts() {
     })
 
     localStorage.setItem("cart-products", JSON.stringify(arr));
+}
+
+function loadCartHtml() {
+    let tempDiv = document.createElement("div");
+    tempDiv.innerHTML = `
+    <!-- Cart -->
+    <div id="cart-container" class="hidden z-50 fixed top-0 left-0 w-full min-h-screen bg-black bg-opacity-60">
+        <div class="cart fixed -right-full top-0 w-11/12 sm:w-3/5 lg:w-1/2 max-h-[95%] rounded-s-lg bg-white overflow-y-scroll no-scrollbar transition-all duration-500">
+            <h1 class="font-bold text-3xl text-center py-5 border-b-2 border-b-gray">Your Cart</h1>
+
+            <div class="products flex flex-col gap-4 py-6 px-5">
+
+            </div>
+            <div class="no-products text-center text-2xl text-secondary font-bold mt-1 mb-12">
+            There's no products in the cart.
+            </div>
+
+            <div class="px-5 border-t-2 border-t-gray py-4">
+            <div class="flex justify-between text-3xl">
+                <h3 class="font-semibold">Selected: <span class="total-selected-price">0</span>$</h3>
+                <h3 class="font-semibold">Total: <span class="total-price">0</span>$</h3>
+            </div>
+            <p class="text-gray-dark text-sm mt-2">Taxes, discounts and shipping calculated after ordering.</p>
+            <button type="submit" disabled class="block orderBtn disabled:opacity-60 text-white py-2 px-4 rounded-lg mt-8 mx-auto bg-gradient-to-r from-secondary-light from-70% to-secondary">Order Now</button>
+            </div>
+        </div>
+    </div>
+  <!-- End Cart -->
+  `
+    document.body.appendChild(tempDiv.firstElementChild);
 }
 
 
