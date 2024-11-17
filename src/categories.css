@@ -11,6 +11,11 @@ input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
     -webkit-appearance: none;
 }
+.active {
+    background-color: #1e90ff; 
+
+}
+
 
 @media (max-width: 768px) {
     .fleter {
