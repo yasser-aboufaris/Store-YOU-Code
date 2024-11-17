@@ -28,12 +28,12 @@ Le projet a pour but :
 ## 🛠 Technologies Utilisées
 
 - **HTML5** : Pour la structure des pages.  
-- **CSS3** : Pour le design et la mise en page (Flexbox, Grid, Media Queries).  
+- **Tailwind** : Pour le design et la mise en page (Flexbox, Grid, Media Queries).  
 - **JavaScript** : Pour les interactions dynamiques (ajouter au panier, filtres, etc.).  
 - **API RandomUser** : Pour remplir automatiquement les champs du formulaire.  
-- **localStorage/sessionStorage** : Pour garder les données du panier après le rechargement de la page.  
-- **Regex** : Pour valider les champs du formulaire.  
+- **localStorage/sessionStorage** : Pour garder les données du panier après le rechargement de la page.
 
+  
 ---
 
 ##  Pages du Site
